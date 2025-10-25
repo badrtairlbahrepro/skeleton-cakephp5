@@ -1,12 +1,27 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Class App\\\\Application extends generic class Cake\\\\Http\\\\BaseApplication but does not specify its types\\: TSubject$#"
+			count: 1
+			path: src/Application.php
+
+		-
 			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, string\\|false given\\.$#"
 			count: 1
 			path: src/Console/Installer.php
 
 		-
+			message: "#^Method App\\\\Controller\\\\AppController\\:\\:beforeRender\\(\\) has parameter \\$event with generic interface Cake\\\\Event\\\\EventInterface but does not specify its types\\: TSubject$#"
+			count: 1
+			path: src/Controller/AppController.php
+
+		-
 			message: "#^Constant ROOT not found\\.$#"
+			count: 1
+			path: src/Controller/ComponentsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ComponentsController\\:\\:loadComponents\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Controller/ComponentsController.php
 
@@ -87,6 +102,11 @@ parameters:
 
 		-
 			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:parseLogLine\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
 
@@ -181,9 +201,29 @@ parameters:
 			path: src/Controller/UsersController.php
 
 		-
+			message: "#^Method Domain\\\\User\\\\Entity\\\\User\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Domain/User/Entity/User.php
+
+		-
+			message: "#^Method Domain\\\\User\\\\Repository\\\\UserRepositoryInterface\\:\\:findAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Domain/User/Repository/UserRepositoryInterface.php
+
+		-
 			message: "#^Property Infrastructure\\\\DependencyInjection\\\\ServiceProvider\\:\\:\\$container is never read, only written\\.$#"
 			count: 1
 			path: src/Infrastructure/DependencyInjection/ServiceProvider.php
+
+		-
+			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\Table\\\\UsersTable\\:\\:initialize\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/Table/UsersTable.php
+
+		-
+			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:findAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
 
 		-
 			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:toDomainEntity\\(\\) has parameter \\$entity with no type specified\\.$#"
@@ -197,5 +237,70 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$Html\\.$#"
-			count: 58
+			count: 59
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:checkboxInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:emailInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:fileInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:passwordInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:radioInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:resetButton\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:selectInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:selectMultipleInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:submitButton\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:switchInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:textInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:textareaInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$helpers type has no value type specified in iterable type array\\.$#"
+			count: 1
 			path: src/View/Helper/AdminLteFormHelper.php
