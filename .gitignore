@@ -37,3 +37,4 @@ package-lock.json
 # Test coverage
 coverage/
 .phpunit.result.cache
+.phpunit.cache/
