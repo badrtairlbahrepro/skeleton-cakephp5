@@ -38,7 +38,7 @@ class LogsController extends AppController
     public function index(): void
     {
         $logFiles = [];
-        
+
         // Récupérer tous les fichiers de log
         if (is_dir($this->logsDir)) {
             $files = scandir($this->logsDir);
@@ -67,7 +67,7 @@ class LogsController extends AppController
 
     /**
      * Afficher le contenu d'un fichier de log spécifique
-     * 
+     *
      * @param string|null $filename Le nom du fichier de log
      * @return \Cake\Http\Response|null
      */
@@ -93,7 +93,7 @@ class LogsController extends AppController
             $this->Flash->error('Impossible de lire le fichier de log');
             return $this->redirect(['action' => 'index']) ?? $this->response;
         }
-        
+
         $lines = explode("\n", trim($content));
 
         // Get pagination parameters
@@ -227,7 +227,7 @@ class LogsController extends AppController
             $this->Flash->error('Impossible de lire le fichier de log');
             return $this->redirect(['action' => 'index']) ?? $this->response;
         }
-        
+
         return $this->response->withStringBody($content);
     }
 }
