@@ -35,20 +35,24 @@ class LogsController extends AppController
     /**
      * Lister tous les fichiers de log disponibles
      */
-    public function index()
+    public function index(): void
     {
+        $logFiles = [];
+        
         // Récupérer tous les fichiers de log
         if (is_dir($this->logsDir)) {
             $files = scandir($this->logsDir);
-            foreach ($files as $file) {
-                if ($file !== '.' && $file !== '..' && substr($file, -4) === '.log') {
-                    $filePath = $this->logsDir . $file;
-                    $logFiles[] = [
-                        'name' => $file,
-                        'path' => $filePath,
-                        'size' => filesize($filePath),
-                        'modified' => date('Y-m-d H:i:s', filemtime($filePath)),
-                    ];
+            if ($files !== false) {
+                foreach ($files as $file) {
+                    if ($file !== '.' && $file !== '..' && substr($file, -4) === '.log') {
+                        $filePath = $this->logsDir . $file;
+                        $logFiles[] = [
+                            'name' => $file,
+                            'path' => $filePath,
+                            'size' => filesize($filePath),
+                            'modified' => date('Y-m-d H:i:s', filemtime($filePath)),
+                        ];
+                    }
                 }
             }
         }
@@ -63,12 +67,15 @@ class LogsController extends AppController
 
     /**
      * Afficher le contenu d'un fichier de log spécifique
+     * 
+     * @param string|null $filename Le nom du fichier de log
+     * @return \Cake\Http\Response|null
      */
-    public function view($filename = null)
+    public function view(?string $filename = null): ?\Cake\Http\Response
     {
         // Lire et afficher un fichier de log
         // Prevent directory traversal
-        $filename = basename($filename);
+        $filename = $filename ? basename($filename) : '';
         if (substr($filename, -4) !== '.log') {
             $filename .= '.log';
         }
@@ -77,11 +84,16 @@ class LogsController extends AppController
 
         if (!file_exists($filePath)) {
             $this->Flash->error('Fichier de log non trouvé: ' . $filename);
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect(['action' => 'index']) ?? $this->response;
         }
 
         // Get file content
         $content = file_get_contents($filePath);
+        if ($content === false) {
+            $this->Flash->error('Impossible de lire le fichier de log');
+            return $this->redirect(['action' => 'index']) ?? $this->response;
+        }
+        
         $lines = explode("\n", trim($content));
 
         // Get pagination parameters
@@ -114,6 +126,7 @@ class LogsController extends AppController
         }
 
         $this->set(compact('filename', 'parsedLines', 'page', 'totalPages', 'totalLines'));
+        return null;
     }
 
     /**
@@ -158,16 +171,16 @@ class LogsController extends AppController
     /**
      * Vider un fichier de log
      */
-    public function clear($filename = null)
+    public function clear(?string $filename = null): \Cake\Http\Response
     {
         // Supprimer le contenu d'un fichier de log
         if (!$this->request->is('post')) {
             $this->Flash->error('Méthode de requête invalide');
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect(['action' => 'index']) ?? $this->response;
         }
 
         // Prevent directory traversal
-        $filename = basename($filename);
+        $filename = $filename ? basename($filename) : '';
         if (substr($filename, -4) !== '.log') {
             $filename .= '.log';
         }
@@ -181,17 +194,17 @@ class LogsController extends AppController
             $this->Flash->error('Fichier de log non trouvé: ' . $filename);
         }
 
-        return $this->redirect(['action' => 'view', $filename]);
+        return $this->redirect(['action' => 'view', $filename]) ?? $this->response;
     }
 
     /**
      * Télécharger un fichier de log
      */
-    public function download($filename = null)
+    public function download(?string $filename = null): \Cake\Http\Response
     {
         // Télécharger un fichier de log sur l'ordinateur
         // Prevent directory traversal
-        $filename = basename($filename);
+        $filename = $filename ? basename($filename) : '';
         if (substr($filename, -4) !== '.log') {
             $filename .= '.log';
         }
@@ -200,7 +213,7 @@ class LogsController extends AppController
 
         if (!file_exists($filePath)) {
             $this->Flash->error('Fichier de log non trouvé: ' . $filename);
-            return $this->redirect(['action' => 'index']);
+            return $this->redirect(['action' => 'index']) ?? $this->response;
         }
 
         // Set response for download
@@ -209,6 +222,12 @@ class LogsController extends AppController
             ->withHeader('Content-Disposition', 'attachment; filename="' . $filename . '"');
 
         // Read and return file content
-        return $this->response->withStringBody(file_get_contents($filePath));
+        $content = file_get_contents($filePath);
+        if ($content === false) {
+            $this->Flash->error('Impossible de lire le fichier de log');
+            return $this->redirect(['action' => 'index']) ?? $this->response;
+        }
+        
+        return $this->response->withStringBody($content);
     }
 }

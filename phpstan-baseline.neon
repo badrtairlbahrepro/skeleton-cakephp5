@@ -71,52 +71,12 @@ parameters:
 			path: src/Controller/ErrorTestController.php
 
 		-
-			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
 			message: "#^Constant LOGS not found\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
 
 		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:clear\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:clear\\(\\) has parameter \\$filename with no type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:download\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:download\\(\\) has parameter \\$filename with no type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:index\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
 			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:parseLogLine\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:view\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:view\\(\\) has parameter \\$filename with no type specified\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
 
@@ -127,16 +87,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$request of method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) expects Cake\\\\Http\\\\ServerRequest, Cake\\\\Http\\\\ServerRequest\\|null given\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Parameter \\#1 \\$string of function trim expects string, string\\|false given\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Parameter \\#1 \\$string of method Cake\\\\Http\\\\Response\\:\\:withStringBody\\(\\) expects string\\|null, string\\|false given\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
 
@@ -167,11 +117,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\$components of method App\\\\Controller\\\\LogsController\\:\\:__construct\\(\\) has invalid type Cake\\\\Http\\\\Controller\\\\ComponentRegistry\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
-			message: "#^Variable \\$logFiles might not be defined\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
 
