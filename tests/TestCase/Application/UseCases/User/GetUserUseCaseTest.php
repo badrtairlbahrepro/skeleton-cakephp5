@@ -57,7 +57,7 @@ class GetUserUseCaseTest extends TestCase
             ->willReturn(null);
 
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('User not found');
+        $this->expectExceptionMessage('Utilisateur non trouvé');
 
         $this->useCase->execute($userId);
     }

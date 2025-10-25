@@ -46,7 +46,7 @@ class UserTest extends TestCase
     public function testCreateUserWithInvalidEmail(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid email format');
+        $this->expectExceptionMessage('Format d\'email invalide');
 
         new User('not-an-email', 'John Doe');
     }
@@ -57,7 +57,7 @@ class UserTest extends TestCase
     public function testCreateUserWithEmailNoAt(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid email format');
+        $this->expectExceptionMessage('Format d\'email invalide');
 
         new User('johnexample.com', 'John Doe');
     }
@@ -68,7 +68,7 @@ class UserTest extends TestCase
     public function testCreateUserWithEmptyName(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Name cannot be empty');
+        $this->expectExceptionMessage('Le nom ne peut pas être vide');
 
         new User('john@example.com', '');
     }
@@ -79,7 +79,7 @@ class UserTest extends TestCase
     public function testCreateUserWithNameTooShort(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Name must be at least 2 characters long');
+        $this->expectExceptionMessage('Le nom doit comporter au moins 2 caractères');
 
         new User('john@example.com', 'A');
     }
