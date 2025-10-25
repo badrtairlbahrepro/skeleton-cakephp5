@@ -1,0 +1,201 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, string\\|false given\\.$#"
+			count: 1
+			path: src/Console/Installer.php
+
+		-
+			message: "#^Constant ROOT not found\\.$#"
+			count: 1
+			path: src/Controller/ComponentsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ComponentsController\\:\\:view\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
+			count: 1
+			path: src/Controller/ComponentsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$json of function json_decode expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Controller/ComponentsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error400\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error401\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error403\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error404\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error500\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:generic\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/ErrorTestController.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Constant LOGS not found\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:clear\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:clear\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:download\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:download\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:index\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:view\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:view\\(\\) has parameter \\$filename with no type specified\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) invoked with 5 parameters, 1\\-4 required\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$request of method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) expects Cake\\\\Http\\\\ServerRequest, Cake\\\\Http\\\\ServerRequest\\|null given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function trim expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of method Cake\\\\Http\\\\Response\\:\\:withStringBody\\(\\) expects string\\|null, string\\|false given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#2 \\$name of method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) expects string\\|null, Psr\\\\Http\\\\Message\\\\ResponseInterface\\|null given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#2 \\$offset of function array_slice expects int, float\\|int\\<0, max\\> given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#2 \\$timestamp of function date expects int\\|null, int\\|false given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#3 \\$eventManager of method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) expects Cake\\\\Event\\\\EventManagerInterface\\|null, string\\|null given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\#4 \\$components of method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) expects Cake\\\\Controller\\\\ComponentRegistry\\|null, Cake\\\\Event\\\\EventManager\\|null given\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Parameter \\$components of method App\\\\Controller\\\\LogsController\\:\\:__construct\\(\\) has invalid type Cake\\\\Http\\\\Controller\\\\ComponentRegistry\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Variable \\$logFiles might not be defined\\.$#"
+			count: 1
+			path: src/Controller/LogsController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\PagesController\\:\\:display\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
+			count: 1
+			path: src/Controller/PagesController.php
+
+		-
+			message: "#^Function __ not found\\.$#"
+			count: 1
+			path: src/Controller/UsersController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\UsersController\\:\\:add\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
+			count: 1
+			path: src/Controller/UsersController.php
+
+		-
+			message: "#^Method App\\\\Controller\\\\UsersController\\:\\:view\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
+			count: 1
+			path: src/Controller/UsersController.php
+
+		-
+			message: "#^Parameter \\#1 \\$id of method Application\\\\UseCases\\\\User\\\\GetUserUseCase\\:\\:execute\\(\\) expects int, int\\|null given\\.$#"
+			count: 1
+			path: src/Controller/UsersController.php
+
+		-
+			message: "#^Property Infrastructure\\\\DependencyInjection\\\\ServiceProvider\\:\\:\\$container is never read, only written\\.$#"
+			count: 1
+			path: src/Infrastructure/DependencyInjection/ServiceProvider.php
+
+		-
+			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:toDomainEntity\\(\\) has parameter \\$entity with no type specified\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
+
+		-
+			message: "#^Access to an undefined property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$Form\\.$#"
+			count: 6
+			path: src/View/Helper/AdminLteFormHelper.php
+
+		-
+			message: "#^Access to an undefined property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$Html\\.$#"
+			count: 58
+			path: src/View/Helper/AdminLteFormHelper.php

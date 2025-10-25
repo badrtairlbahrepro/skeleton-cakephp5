@@ -1,0 +1,39 @@
+# CakePHP specific files
+/config/app_local.php
+/config/.env
+/logs/*
+/tmp/*
+/vendor/*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.buildpath
+.settings/
+nbproject/
+
+# Composer
+composer.phar
+composer.lock
+
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Test coverage
+coverage/
+.phpunit.result.cache

@@ -1,0 +1,509 @@
+{
+  "buttons": {
+    "name": "Boutons",
+    "icon": "fa-mouse",
+    "description": "Tous les styles de boutons disponibles",
+    "variants": [
+      {
+        "id": "primary",
+        "label": "Bouton Principal",
+        "code": "<button class=\"btn btn-primary\">Action Principale</button>",
+        "description": "Bouton bleu pour les actions principales"
+      },
+      {
+        "id": "secondary",
+        "label": "Bouton Secondaire",
+        "code": "<button class=\"btn btn-secondary\">Annuler</button>",
+        "description": "Bouton gris pour les actions secondaires"
+      },
+      {
+        "id": "success",
+        "label": "Bouton Succès",
+        "code": "<button class=\"btn btn-success\">Valider</button>",
+        "description": "Bouton vert pour les actions réussies"
+      },
+      {
+        "id": "danger",
+        "label": "Bouton Danger",
+        "code": "<button class=\"btn btn-danger\">Supprimer</button>",
+        "description": "Bouton rouge pour les actions dangereuses"
+      },
+      {
+        "id": "warning",
+        "label": "Bouton Avertissement",
+        "code": "<button class=\"btn btn-warning\">Attention</button>",
+        "description": "Bouton orange pour les avertissements"
+      },
+      {
+        "id": "info",
+        "label": "Bouton Info",
+        "code": "<button class=\"btn btn-info\">Information</button>",
+        "description": "Bouton cyan pour les informations"
+      },
+      {
+        "id": "outline",
+        "label": "Bouton Outline",
+        "code": "<button class=\"btn btn-outline-primary\">Outline</button>",
+        "description": "Bouton avec contour seulement"
+      },
+      {
+        "id": "sizes",
+        "label": "Tailles de Boutons",
+        "code": "<button class=\"btn btn-primary btn-sm\">Petit</button><button class=\"btn btn-primary\">Normal</button><button class=\"btn btn-primary btn-lg\">Grand</button>",
+        "description": "Boutons en différentes tailles"
+      }
+    ]
+  },
+  "cards": {
+    "name": "Cartes",
+    "icon": "fa-layer-group",
+    "description": "Composants de carte AdminLTE",
+    "variants": [
+      {
+        "id": "simple",
+        "label": "Carte Simple",
+        "code": "<div class=\"card\">\n  <div class=\"card-header\">\n    <h3 class=\"card-title\">Titre</h3>\n  </div>\n  <div class=\"card-body\">\n    Contenu de la carte\n  </div>\n</div>",
+        "description": "Carte basique AdminLTE"
+      },
+      {
+        "id": "with-footer",
+        "label": "Carte avec Footer",
+        "code": "<div class=\"card\">\n  <div class=\"card-header\">\n    <h3 class=\"card-title\">Titre</h3>\n  </div>\n  <div class=\"card-body\">\n    Contenu de la carte\n  </div>\n  <div class=\"card-footer\">\n    Footer\n  </div>\n</div>",
+        "description": "Carte avec pied de page"
+      },
+      {
+        "id": "primary",
+        "label": "Carte Primary",
+        "code": "<div class=\"card card-primary\">\n  <div class=\"card-header\">\n    <h3 class=\"card-title\">Titre</h3>\n  </div>\n  <div class=\"card-body\">\n    Contenu en couleur primaire\n  </div>\n</div>",
+        "description": "Carte avec couleur primaire"
+      },
+      {
+        "id": "collapsed",
+        "label": "Carte Collapsible",
+        "code": "<div class=\"card\">\n  <div class=\"card-header\" data-card-widget=\"collapse\">\n    <h3 class=\"card-title\">Cliquer pour déplier</h3>\n    <div class=\"card-tools\">\n      <button type=\"button\" class=\"btn btn-tool\">\n        <i class=\"fas fa-minus\"></i>\n      </button>\n    </div>\n  </div>\n  <div class=\"card-body\">\n    Contenu\n  </div>\n</div>",
+        "description": "Carte avec fonction collapse/expand"
+      }
+    ]
+  },
+  "alerts": {
+    "name": "Alertes",
+    "icon": "fa-bell",
+    "description": "Messages d'alerte et notifications",
+    "variants": [
+      {
+        "id": "success",
+        "label": "Alerte Succès",
+        "code": "<div class=\"alert alert-success alert-dismissible\">\n  <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\n  <h5><i class=\"icon fas fa-check\"></i> Succès!</h5>\n  Opération réussie avec succès\n</div>",
+        "description": "Alerte verte pour confirmer une action"
+      },
+      {
+        "id": "danger",
+        "label": "Alerte Danger",
+        "code": "<div class=\"alert alert-danger alert-dismissible\">\n  <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\n  <h5><i class=\"icon fas fa-ban\"></i> Erreur!</h5>\n  Une erreur s'est produite\n</div>",
+        "description": "Alerte rouge pour les erreurs"
+      },
+      {
+        "id": "warning",
+        "label": "Alerte Avertissement",
+        "code": "<div class=\"alert alert-warning alert-dismissible\">\n  <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\n  <h5><i class=\"icon fas fa-exclamation-triangle\"></i> Attention!</h5>\n  Veuillez vérifier ceci\n</div>",
+        "description": "Alerte orange pour les avertissements"
+      },
+      {
+        "id": "info",
+        "label": "Alerte Information",
+        "code": "<div class=\"alert alert-info alert-dismissible\">\n  <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>\n  <h5><i class=\"icon fas fa-info\"></i> Info!</h5>\n  Information importante\n</div>",
+        "description": "Alerte cyan pour les informations"
+      }
+    ]
+  },
+  "badges": {
+    "name": "Badges",
+    "icon": "fa-tag",
+    "description": "Petits indicateurs et étiquettes",
+    "variants": [
+      {
+        "id": "primary",
+        "label": "Badge Primary",
+        "code": "<span class=\"badge badge-primary\">Primary</span>",
+        "description": "Badge bleu"
+      },
+      {
+        "id": "success",
+        "label": "Badge Succès",
+        "code": "<span class=\"badge badge-success\">Actif</span>",
+        "description": "Badge vert"
+      },
+      {
+        "id": "danger",
+        "label": "Badge Danger",
+        "code": "<span class=\"badge badge-danger\">Critique</span>",
+        "description": "Badge rouge"
+      },
+      {
+        "id": "warning",
+        "label": "Badge Avertissement",
+        "code": "<span class=\"badge badge-warning\">Attention</span>",
+        "description": "Badge orange"
+      },
+      {
+        "id": "pill",
+        "label": "Badge Arrondi",
+        "code": "<span class=\"badge badge-pill badge-primary\">10</span>",
+        "description": "Badge avec coins arrondis"
+      }
+    ]
+  },
+  "modals": {
+    "name": "Modales",
+    "icon": "fa-window-maximize",
+    "description": "Boîtes de dialogue modales",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Modale Simple",
+        "code": "<div class=\"modal fade\" id=\"modal-preview-basic\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Titre</h4>\n        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\"></button>\n      </div>\n      <div class=\"modal-body\">\n        Ceci est le contenu de la modale.\n      </div>\n      <div class=\"modal-footer justify-content-between\">\n        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Fermer</button>\n        <button type=\"button\" class=\"btn btn-primary\">Valider</button>\n      </div>\n    </div>\n  </div>\n</div>",
+        "description": "Modale basique avec header, body et footer"
+      },
+      {
+        "id": "large",
+        "label": "Modale Large",
+        "code": "<div class=\"modal fade\" id=\"modal-preview-large\">\n  <div class=\"modal-dialog modal-lg\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Grande Modale</h4>\n      </div>\n      <div class=\"modal-body\">\n        Contenu large avec plus d'espace.\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Fermer</button>\n      </div>\n    </div>\n  </div>\n</div>",
+        "description": "Modale de grande taille"
+      }
+    ]
+  },
+  "forms": {
+    "name": "Formulaires",
+    "icon": "fa-edit",
+    "description": "Éléments de formulaire",
+    "variants": [
+      {
+        "id": "text-input",
+        "label": "Champ Texte",
+        "code": "<div class=\"form-group\">\n  <label for=\"exampleInputEmail1\">Email</label>\n  <div class=\"input-group\">\n    <div class=\"input-group-prepend\">\n      <span class=\"input-group-text\"><i class=\"fas fa-envelope\"></i></span>\n    </div>\n    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" placeholder=\"Entrez votre email\">\n  </div>\n</div>",
+        "description": "Champ de saisie texte avec icône"
+      },
+      {
+        "id": "password-input",
+        "label": "Champ Mot de Passe",
+        "code": "<div class=\"form-group\">\n  <label for=\"exampleInputPassword\">Mot de passe</label>\n  <div class=\"input-group\">\n    <div class=\"input-group-prepend\">\n      <span class=\"input-group-text\"><i class=\"fas fa-lock\"></i></span>\n    </div>\n    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword\" placeholder=\"Entrez votre mot de passe\">\n    <div class=\"input-group-append\">\n      <button class=\"btn btn-outline-secondary\" type=\"button\" onclick=\"togglePassword()\">\n        <i class=\"fas fa-eye\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n<script>\n  function togglePassword() {\n    var input = document.getElementById('exampleInputPassword');\n    var icon = event.target;\n    if (input.type === 'password') {\n      input.type = 'text';\n      icon.className = 'fas fa-eye-slash';\n    } else {\n      input.type = 'password';\n      icon.className = 'fas fa-eye';\n    }\n  }\n</script>",
+        "description": "Champ de saisie mot de passe avec icône et bouton afficher/masquer"
+      },
+      {
+        "id": "textarea",
+        "label": "Zone de Texte",
+        "code": "<div class=\"form-group\">\n  <label for=\"exampleTextarea\">Message</label>\n  <div class=\"input-group\">\n    <div class=\"input-group-prepend\">\n      <span class=\"input-group-text\"><i class=\"fas fa-comment\"></i></span>\n    </div>\n    <textarea class=\"form-control\" id=\"exampleTextarea\" rows=\"4\" placeholder=\"Entrez votre message...\"></textarea>\n  </div>\n</div>",
+        "description": "Zone de texte multi-lignes avec icône"
+      },
+      {
+        "id": "file-input",
+        "label": "Champ Fichier",
+        "code": "<div class=\"form-group\">\n  <label for=\"exampleInputFile\">File input</label>\n  <div class=\"input-group\">\n    <div class=\"custom-file\">\n      <input type=\"file\" class=\"custom-file-input\" id=\"exampleInputFile\">\n      <label class=\"custom-file-label\" for=\"exampleInputFile\">Choose file</label>\n    </div>\n    <div class=\"input-group-append\">\n      <span class=\"input-group-text\">Upload</span>\n    </div>\n  </div>\n</div>",
+        "description": "Champ de téléchargement de fichier"
+      },
+      {
+        "id": "file-input-advanced",
+        "label": "Champ Fichier Avancé",
+        "code": "<div class=\"form-group\">\n  <label for=\"exampleInputFileAdvanced\">File input avec affichage</label>\n  <div class=\"input-group\">\n    <div class=\"custom-file\">\n      <input type=\"file\" class=\"custom-file-input\" id=\"exampleInputFileAdvanced\" onchange=\"updateFileName(this)\">\n      <label class=\"custom-file-label\" for=\"exampleInputFileAdvanced\" id=\"customFileLabel\">Choose file</label>\n    </div>\n    <div class=\"input-group-append\">\n      <span class=\"input-group-text\">Upload</span>\n    </div>\n  </div>\n</div>\n<script>\n  function updateFileName(input) {\n    var fileName = input.files[0] ? input.files[0].name : 'Choose file';\n    document.getElementById('customFileLabel').textContent = fileName;\n  }\n</script>",
+        "description": "Champ fichier avec affichage du nom du fichier sélectionné"
+      },
+      {
+        "id": "select",
+        "label": "Sélecteur",
+        "code": "<div class=\"mb-3\">\n  <label for=\"exampleSelect1\" class=\"form-label\">Sélectionner</label>\n  <select class=\"form-control\" id=\"exampleSelect1\">\n    <option>Option 1</option>\n    <option>Option 2</option>\n    <option>Option 3</option>\n  </select>\n</div>",
+        "description": "Liste déroulante"
+      },
+      {
+        "id": "checkbox",
+        "label": "Case à Cocher",
+        "code": "<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"checkbox\" id=\"exampleCheck1\">\n  <label class=\"form-check-label\" for=\"exampleCheck1\">\n    Cochez-moi\n  </label>\n</div>",
+        "description": "Case à cocher"
+      },
+      {
+        "id": "multiple-checkboxes",
+        "label": "Plusieurs Cases à Cocher",
+        "code": "<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"checkbox\" id=\"check1\">\n  <label class=\"form-check-label\" for=\"check1\">Option 1</label>\n</div>\n<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"checkbox\" id=\"check2\">\n  <label class=\"form-check-label\" for=\"check2\">Option 2</label>\n</div>\n<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"checkbox\" id=\"check3\">\n  <label class=\"form-check-label\" for=\"check3\">Option 3</label>\n</div>",
+        "description": "Plusieurs cases à cocher"
+      },
+      {
+        "id": "radio",
+        "label": "Bouton Radio",
+        "code": "<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"radio\" name=\"exampleRadios\" id=\"exampleRadios1\" value=\"option1\">\n  <label class=\"form-check-label\" for=\"exampleRadios1\">\n    Option 1\n  </label>\n</div>\n<div class=\"form-check\">\n  <input class=\"form-check-input\" type=\"radio\" name=\"exampleRadios\" id=\"exampleRadios2\" value=\"option2\">\n  <label class=\"form-check-label\" for=\"exampleRadios2\">\n    Option 2\n  </label>\n</div>",
+        "description": "Boutons radio"
+      },
+      {
+        "id": "date-input",
+        "label": "Champ Date",
+        "code": "<div class=\"mb-3\">\n  <label for=\"exampleDate\" class=\"form-label\">Date</label>\n  <input type=\"date\" class=\"form-control\" id=\"exampleDate\">\n</div>",
+        "description": "Champ de saisie de date"
+      },
+      {
+        "id": "range-input",
+        "label": "Curseur (Range)",
+        "code": "<div class=\"mb-3\">\n  <label for=\"exampleRange\" class=\"form-label\">Volume: <span id=\"rangeValue\">50</span>%</label>\n  <input type=\"range\" class=\"form-range\" id=\"exampleRange\" min=\"0\" max=\"100\" value=\"50\">\n</div>\n<script>\n  document.getElementById('exampleRange').addEventListener('input', function() {\n    document.getElementById('rangeValue').textContent = this.value;\n  });\n</script>",
+        "description": "Curseur pour sélectionner une valeur"
+      },
+      {
+        "id": "color-input",
+        "label": "Sélecteur de Couleur",
+        "code": "<div class=\"mb-3\">\n  <label for=\"exampleColor\" class=\"form-label\">Choisir une couleur</label>\n  <input type=\"color\" class=\"form-control form-control-color\" id=\"exampleColor\" value=\"#007bff\">\n</div>",
+        "description": "Sélecteur de couleur"
+      },
+      {
+        "id": "input-group",
+        "label": "Groupe d'Entrée",
+        "code": "<div class=\"input-group mb-3\">\n  <span class=\"input-group-text\">@</span>\n  <input type=\"text\" class=\"form-control\" placeholder=\"Username\">\n</div>\n<div class=\"input-group mb-3\">\n  <input type=\"text\" class=\"form-control\" placeholder=\"Montant\">\n  <span class=\"input-group-text\">.00</span>\n</div>",
+        "description": "Groupe d'entrée avec symboles"
+      },
+      {
+        "id": "disabled-fields",
+        "label": "Champs Désactivés",
+        "code": "<div class=\"mb-3\">\n  <label for=\"disabledInput\" class=\"form-label\">Champ désactivé</label>\n  <input type=\"text\" class=\"form-control\" id=\"disabledInput\" disabled placeholder=\"Vous ne pouvez pas modifier\">\n</div>\n<div class=\"mb-3\">\n  <label for=\"disabledSelect\" class=\"form-label\">Sélect désactivé</label>\n  <select class=\"form-control\" id=\"disabledSelect\" disabled>\n    <option>Option 1</option>\n  </select>\n</div>",
+        "description": "Champs désactivés"
+      },
+      {
+        "id": "validation",
+        "label": "Validation États",
+        "code": "<div class=\"mb-3\">\n  <label for=\"validInput\" class=\"form-label\">Entrée valide</label>\n  <input type=\"text\" class=\"form-control is-valid\" id=\"validInput\" value=\"Correct!\">\n  <div class=\"valid-feedback\">\n    Looks good!\n  </div>\n</div>\n<div class=\"mb-3\">\n  <label for=\"invalidInput\" class=\"form-label\">Entrée invalide</label>\n  <input type=\"text\" class=\"form-control is-invalid\" id=\"invalidInput\" value=\"Erreur\">\n  <div class=\"invalid-feedback\">\n    Veuillez corriger ce champ\n  </div>\n</div>",
+        "description": "États de validation des champs"
+      },
+      {
+        "id": "form-complete",
+        "label": "Formulaire Complet",
+        "code": "<form>\n  <div class=\"mb-3\">\n    <label for=\"name\" class=\"form-label\">Nom</label>\n    <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Votre nom\">\n  </div>\n  <div class=\"mb-3\">\n    <label for=\"email\" class=\"form-label\">Email</label>\n    <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"votre@email.com\">\n  </div>\n  <div class=\"mb-3\">\n    <label for=\"subject\" class=\"form-label\">Sujet</label>\n    <select class=\"form-control\" id=\"subject\">\n      <option>Sélectionner un sujet</option>\n      <option>Question</option>\n      <option>Problème</option>\n      <option>Suggestion</option>\n    </select>\n  </div>\n  <div class=\"mb-3\">\n    <label for=\"message\" class=\"form-label\">Message</label>\n    <textarea class=\"form-control\" id=\"message\" rows=\"4\" placeholder=\"Votre message\"></textarea>\n  </div>\n  <div class=\"form-check mb-3\">\n    <input class=\"form-check-input\" type=\"checkbox\" id=\"agree\">\n    <label class=\"form-check-label\" for=\"agree\">\n      J'accepte les conditions\n    </label>\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n  <button type=\"reset\" class=\"btn btn-secondary\">Réinitialiser</button>\n</form>",
+        "description": "Exemple de formulaire complet avec plusieurs éléments"
+      }
+    ]
+  },
+  "tables": {
+    "name": "Tableaux",
+    "icon": "fa-table",
+    "description": "Composants de tableau de données",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Tableau Simple",
+        "code": "<table class=\"table\">\n  <thead>\n    <tr>\n      <th>Nom</th>\n      <th>Email</th>\n      <th>Actions</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Jean Dupont</td>\n      <td>jean@example.com</td>\n      <td><a href=\"#\" class=\"btn btn-sm btn-primary\">Éditer</a></td>\n    </tr>\n  </tbody>\n</table>",
+        "description": "Tableau basique"
+      },
+      {
+        "id": "striped",
+        "label": "Tableau Rayé",
+        "code": "<table class=\"table table-striped\">\n  <thead>\n    <tr>\n      <th>#</th>\n      <th>Nom</th>\n      <th>Email</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Jean</td>\n      <td>jean@example.com</td>\n    </tr>\n    <tr>\n      <td>2</td>\n      <td>Marie</td>\n      <td>marie@example.com</td>\n    </tr>\n  </tbody>\n</table>",
+        "description": "Tableau avec rayures alternées"
+      },
+      {
+        "id": "bordered",
+        "label": "Tableau Bordé",
+        "code": "<table class=\"table table-bordered\">\n  <thead>\n    <tr>\n      <th>Produit</th>\n      <th>Prix</th>\n      <th>Quantité</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Produit A</td>\n      <td>100€</td>\n      <td>5</td>\n    </tr>\n  </tbody>\n</table>",
+        "description": "Tableau avec bordures"
+      },
+      {
+        "id": "hover",
+        "label": "Tableau Hoverable",
+        "code": "<table class=\"table table-hover\">\n  <thead>\n    <tr>\n      <th>ID</th>\n      <th>Nom</th>\n      <th>Statut</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>Élément 1</td>\n      <td><span class=\"badge badge-success\">Actif</span></td>\n    </tr>\n  </tbody>\n</table>",
+        "description": "Tableau avec effet hover au survol"
+      }
+    ]
+  },
+  "pagination": {
+    "name": "Pagination",
+    "icon": "fa-list",
+    "description": "Composants de navigation pour paginer",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Pagination Simple",
+        "code": "<nav aria-label=\"Navigation\">\n  <ul class=\"pagination\">\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Précédent</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>\n    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">2</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Suivant</a></li>\n  </ul>\n</nav>",
+        "description": "Pagination basique"
+      },
+      {
+        "id": "disabled",
+        "label": "Pagination avec État Désactivé",
+        "code": "<nav aria-label=\"Navigation\">\n  <ul class=\"pagination\">\n    <li class=\"page-item disabled\"><a class=\"page-link\" href=\"#\">Précédent</a></li>\n    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">1</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Suivant</a></li>\n  </ul>\n</nav>",
+        "description": "Pagination avec boutons désactivés"
+      },
+      {
+        "id": "size-large",
+        "label": "Pagination Large",
+        "code": "<nav aria-label=\"Navigation\">\n  <ul class=\"pagination pagination-lg\">\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>\n    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">2</a></li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\n  </ul>\n</nav>",
+        "description": "Pagination de grande taille"
+      }
+    ]
+  },
+  "breadcrumbs": {
+    "name": "Fil d'Ariane",
+    "icon": "fa-home",
+    "description": "Navigation en fil d'Ariane",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Fil d'Ariane Simple",
+        "code": "<nav aria-label=\"breadcrumb\">\n  <ol class=\"breadcrumb\">\n    <li class=\"breadcrumb-item\"><a href=\"#\">Accueil</a></li>\n    <li class=\"breadcrumb-item\"><a href=\"#\">Bibliothèque</a></li>\n    <li class=\"breadcrumb-item active\" aria-current=\"page\">Données</li>\n  </ol>\n</nav>",
+        "description": "Fil d'Ariane basique"
+      },
+      {
+        "id": "with-icons",
+        "label": "Fil d'Ariane avec Icônes",
+        "code": "<nav aria-label=\"breadcrumb\">\n  <ol class=\"breadcrumb\">\n    <li class=\"breadcrumb-item\"><a href=\"#\"><i class=\"fas fa-home\"></i> Accueil</a></li>\n    <li class=\"breadcrumb-item\"><a href=\"#\"><i class=\"fas fa-folder\"></i> Dossier</a></li>\n    <li class=\"breadcrumb-item active\"><i class=\"fas fa-file\"></i> Fichier</li>\n  </ol>\n</nav>",
+        "description": "Fil d'Ariane avec icônes Font Awesome"
+      }
+    ]
+  },
+  "progress": {
+    "name": "Barres de Progression",
+    "icon": "fa-bars",
+    "description": "Indicateurs de progression",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Barre Simple",
+        "code": "<div class=\"progress\">\n  <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">40% Complete</span>\n  </div>\n</div>",
+        "description": "Barre de progression basique"
+      },
+      {
+        "id": "colors",
+        "label": "Barres Colorées",
+        "code": "<div class=\"progress mb-2\">\n  <div class=\"progress-bar bg-primary\" role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">25%</span>\n  </div>\n</div>\n<div class=\"progress mb-2\">\n  <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">50%</span>\n  </div>\n</div>\n<div class=\"progress mb-2\">\n  <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 75%\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">75%</span>\n  </div>\n</div>\n<div class=\"progress\">\n  <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 90%\" aria-valuenow=\"90\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">90%</span>\n  </div>\n</div>",
+        "description": "Barres avec différentes couleurs"
+      },
+      {
+        "id": "striped",
+        "label": "Barre Rayée",
+        "code": "<div class=\"progress\">\n  <div class=\"progress-bar progress-bar-striped bg-primary\" role=\"progressbar\" style=\"width: 75%\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">75% Complete</span>\n  </div>\n</div>",
+        "description": "Barre de progression rayée"
+      },
+      {
+        "id": "animated",
+        "label": "Barre Animée",
+        "code": "<div class=\"progress\">\n  <div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success\" role=\"progressbar\" style=\"width: 60%\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n    <span class=\"sr-only\">60% Complete</span>\n  </div>\n</div>",
+        "description": "Barre de progression animée"
+      }
+    ]
+  },
+  "spinners": {
+    "name": "Spinners (Chargement)",
+    "icon": "fa-spinner",
+    "description": "Indicateurs de chargement",
+    "variants": [
+      {
+        "id": "border",
+        "label": "Spinner Bordure",
+        "code": "<div class=\"spinner-border\" role=\"status\">\n  <span class=\"visually-hidden\"></span>\n</div>",
+        "description": "Spinner avec bordure"
+      },
+      {
+        "id": "grow",
+        "label": "Spinner Croissance",
+        "code": "<div class=\"spinner-grow\" role=\"status\">\n  <span class=\"visually-hidden\"></span>\n</div>",
+        "description": "Spinner qui grandit"
+      },
+      {
+        "id": "colors",
+        "label": "Spinners Colorés",
+        "code": "<div class=\"spinner-border text-primary\" role=\"status\"><span class=\"visually-hidden\"></span></div>\n<div class=\"spinner-border text-success\" role=\"status\"><span class=\"visually-hidden\"></span></div>\n<div class=\"spinner-border text-danger\" role=\"status\"><span class=\"visually-hidden\"></span></div>",
+        "description": "Spinners avec différentes couleurs"
+      },
+      {
+        "id": "sizes",
+        "label": "Spinners Tailles",
+        "code": "<div class=\"spinner-border spinner-border-sm\" role=\"status\"><span class=\"visually-hidden\"></span></div>\n<div class=\"spinner-grow\" role=\"status\"><span class=\"visually-hidden\"></span></div>",
+        "description": "Spinners en différentes tailles"
+      }
+    ]
+  },
+  "tooltips": {
+    "name": "Tooltips & Popovers",
+    "icon": "fa-circle-question",
+    "description": "Bulles d'information",
+    "variants": [
+      {
+        "id": "tooltip",
+        "label": "Tooltip Simple",
+        "code": "<button type=\"button\" class=\"btn btn-secondary\" data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Tooltip en haut\">\n  Survol moi\n</button>",
+        "description": "Tooltip basique"
+      },
+      {
+        "id": "popover",
+        "label": "Popover",
+        "code": "<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"popover\" data-bs-placement=\"right\" data-bs-title=\"Titre\" data-bs-content=\"Ceci est le contenu du popover\">\n  Cliquer pour popover\n</button>",
+        "description": "Popover avec titre et contenu"
+      },
+      {
+        "id": "placement",
+        "label": "Placements",
+        "code": "<button type=\"button\" class=\"btn btn-info btn-sm\" data-bs-toggle=\"tooltip\" data-bs-placement=\"top\" title=\"Haut\">Haut</button>\n<button type=\"button\" class=\"btn btn-info btn-sm\" data-bs-toggle=\"tooltip\" data-bs-placement=\"right\" title=\"Droite\">Droite</button>\n<button type=\"button\" class=\"btn btn-info btn-sm\" data-bs-toggle=\"tooltip\" data-bs-placement=\"bottom\" title=\"Bas\">Bas</button>\n<button type=\"button\" class=\"btn btn-info btn-sm\" data-bs-toggle=\"tooltip\" data-bs-placement=\"left\" title=\"Gauche\">Gauche</button>",
+        "description": "Tooltips à différentes positions"
+      }
+    ]
+  },
+  "navbar": {
+    "name": "Navbars",
+    "icon": "fa-bars",
+    "description": "Barres de navigation",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Navbar Simple",
+        "code": "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" href=\"#\">Marque</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n      <ul class=\"navbar-nav ms-auto\">\n        <li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Accueil</a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">À propos</a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Contact</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>",
+        "description": "Navbar responsif"
+      },
+      {
+        "id": "dark",
+        "label": "Navbar Sombre",
+        "code": "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" href=\"#\">Marque</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n      <ul class=\"navbar-nav ms-auto\">\n        <li class=\"nav-item\"><a class=\"nav-link active\" href=\"#\">Accueil</a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Services</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>",
+        "description": "Navbar sombre"
+      },
+      {
+        "id": "with-buttons",
+        "label": "Navbar avec Boutons",
+        "code": "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <div class=\"container-fluid\">\n    <a class=\"navbar-brand\" href=\"#\">MonApp</a>\n    <div class=\"d-flex\" role=\"search\">\n      <button class=\"btn btn-outline-primary me-2\" type=\"button\">Connexion</button>\n      <button class=\"btn btn-primary\" type=\"button\">S'inscrire</button>\n    </div>\n  </div>\n</nav>",
+        "description": "Navbar avec boutons d'action"
+      }
+    ]
+  },
+  "sidebar": {
+    "name": "Sidebar (Barre Latérale)",
+    "icon": "fa-sidebar",
+    "description": "Menus latéraux",
+    "variants": [
+      {
+        "id": "vertical",
+        "label": "Sidebar Verticale",
+        "code": "<div class=\"list-group\">\n  <a href=\"#\" class=\"list-group-item list-group-item-action active\">\n    <i class=\"fas fa-home\"></i> Accueil\n  </a>\n  <a href=\"#\" class=\"list-group-item list-group-item-action\">\n    <i class=\"fas fa-users\"></i> Utilisateurs\n  </a>\n  <a href=\"#\" class=\"list-group-item list-group-item-action\">\n    <i class=\"fas fa-cog\"></i> Paramètres\n  </a>\n</div>",
+        "description": "Menu sidebar vertical"
+      },
+      {
+        "id": "with-badge",
+        "label": "Sidebar avec Badges",
+        "code": "<div class=\"list-group\">\n  <a href=\"#\" class=\"list-group-item list-group-item-action\">\n    <div class=\"d-flex justify-content-between\">\n      <span><i class=\"fas fa-inbox\"></i> Messages</span>\n      <span class=\"badge badge-primary\">5</span>\n    </div>\n  </a>\n  <a href=\"#\" class=\"list-group-item list-group-item-action\">\n    <div class=\"d-flex justify-content-between\">\n      <span><i class=\"fas fa-bell\"></i> Notifications</span>\n      <span class=\"badge badge-danger\">3</span>\n    </div>\n  </a>\n</div>",
+        "description": "Sidebar avec compteurs"
+      }
+    ]
+  },
+  "list-groups": {
+    "name": "Listes",
+    "icon": "fa-list",
+    "description": "Groupes de listes",
+    "variants": [
+      {
+        "id": "basic",
+        "label": "Liste Simple",
+        "code": "<ul class=\"list-group\">\n  <li class=\"list-group-item\">Élément 1</li>\n  <li class=\"list-group-item\">Élément 2</li>\n  <li class=\"list-group-item\">Élément 3</li>\n</ul>",
+        "description": "Groupe de liste basique"
+      },
+      {
+        "id": "active",
+        "label": "Liste avec États",
+        "code": "<ul class=\"list-group\">\n  <li class=\"list-group-item active\">Actif</li>\n  <li class=\"list-group-item\">Élément normal</li>\n  <li class=\"list-group-item disabled\">Désactivé</li>\n</ul>",
+        "description": "Liste avec différents états"
+      },
+      {
+        "id": "colored",
+        "label": "Listes Colorées",
+        "code": "<ul class=\"list-group\">\n  <li class=\"list-group-item list-group-item-success\">Succès</li>\n  <li class=\"list-group-item list-group-item-danger\">Danger</li>\n  <li class=\"list-group-item list-group-item-warning\">Avertissement</li>\n  <li class=\"list-group-item list-group-item-info\">Info</li>\n</ul>",
+        "description": "Listes avec couleurs"
+      }
+    ]
+  }
+}
