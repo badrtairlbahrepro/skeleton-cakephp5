@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+// Load configuration paths if LOGS constant is not defined
+if (!defined('LOGS')) {
+    require __DIR__ . '/../../config/paths.php';
+}
+
 /**
  * Contrôleur pour visualiser les logs
  *

@@ -16,11 +16,6 @@ parameters:
 			path: src/Controller/AppController.php
 
 		-
-			message: "#^Constant ROOT not found\\.$#"
-			count: 1
-			path: src/Controller/ComponentsController.php
-
-		-
 			message: "#^Method App\\\\Controller\\\\ComponentsController\\:\\:loadComponents\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Controller/ComponentsController.php
@@ -69,11 +64,6 @@ parameters:
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:index\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
-		-
-			message: "#^Constant LOGS not found\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
 
 		-
 			message: "#^Method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) invoked with 5 parameters, 1\\-4 required\\.$#"

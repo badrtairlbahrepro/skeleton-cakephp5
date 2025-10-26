@@ -8,3 +8,5 @@ parameters:
     excludePaths:
         - src/**/config/*
     tmpDir: tmp/phpstan
+    bootstrapFiles:
+        - config/paths.php
