@@ -1,11 +1,11 @@
 <?php
 /**
- * User view template
+ * Template de visualisation d'utilisateur
  *
  * @var \App\View\AppView $this
  * @var \Domain\User\Entity\User $user
  */
-$this->assign('title', 'User Details');
+$this->assign('title', 'Détails de l\'utilisateur');
 ?>
 
 <div class="row">
@@ -14,7 +14,7 @@ $this->assign('title', 'User Details');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-user mr-2"></i>
-                    User Information
+                    Informations de l'utilisateur
                 </h3>
             </div>
             <div class="card-body">
@@ -22,24 +22,24 @@ $this->assign('title', 'User Details');
                     <dt class="col-sm-4">ID</dt>
                     <dd class="col-sm-8"><?= h($user->getId()) ?></dd>
 
-                    <dt class="col-sm-4">Name</dt>
+                    <dt class="col-sm-4">Nom</dt>
                     <dd class="col-sm-8"><?= h($user->getName()) ?></dd>
 
                     <dt class="col-sm-4">Email</dt>
                     <dd class="col-sm-8"><?= h($user->getEmail()) ?></dd>
 
-                    <dt class="col-sm-4">Created</dt>
+                    <dt class="col-sm-4">Créé le</dt>
                     <dd class="col-sm-8"><?= h($user->getCreatedAt()->format('Y-m-d H:i:s')) ?></dd>
 
                     <?php if ($user->getUpdatedAt()): ?>
-                        <dt class="col-sm-4">Updated</dt>
+                        <dt class="col-sm-4">Modifié le</dt>
                         <dd class="col-sm-8"><?= h($user->getUpdatedAt()->format('Y-m-d H:i:s')) ?></dd>
                     <?php endif; ?>
                 </dl>
             </div>
             <div class="card-footer">
                 <?= $this->Html->link(
-                    '<i class="fas fa-arrow-left"></i> Back to List',
+                    '<i class="fas fa-arrow-left"></i> Retour à la liste',
                     ['action' => 'index'],
                     ['class' => 'btn btn-default', 'escape' => false]
                 ) ?>
@@ -52,19 +52,19 @@ $this->assign('title', 'User Details');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-code mr-2"></i>
-                    Domain Entity
+                    Entité Domaine
                 </h3>
             </div>
             <div class="card-body">
-                <p>This user is represented as a rich domain entity with:</p>
+                <p>Cet utilisateur est représenté comme une entité domaine riche avec :</p>
                 <ul>
-                    <li>Business validation rules</li>
-                    <li>Encapsulated state</li>
-                    <li>Domain methods</li>
-                    <li>No framework dependencies</li>
+                    <li>Règles de validation métier</li>
+                    <li>État encapsulé</li>
+                    <li>Méthodes domaine</li>
+                    <li>Aucune dépendance framework</li>
                 </ul>
                 <div class="alert alert-success">
-                    <strong>Clean Architecture:</strong> The domain entity is completely independent of the framework and infrastructure!
+                    <strong>Architecture Propre :</strong> L'entité domaine est complètement indépendante du framework et de l'infrastructure !
                 </div>
             </div>
         </div>

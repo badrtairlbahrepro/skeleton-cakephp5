@@ -1,11 +1,11 @@
 <?php
 /**
- * Users index template
+ * Template d'index des utilisateurs
  *
  * @var \App\View\AppView $this
  * @var array<\Domain\User\Entity\User> $users
  */
-$this->assign('title', 'Users List');
+$this->assign('title', 'Liste des utilisateurs');
 ?>
 
 <div class="row">
@@ -14,11 +14,11 @@ $this->assign('title', 'Users List');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-users mr-2"></i>
-                    All Users
+                    Tous les utilisateurs
                 </h3>
                 <div class="card-tools">
                     <?= $this->Html->link(
-                        '<i class="fas fa-plus"></i> Add User',
+                        '<i class="fas fa-plus"></i> Ajouter un utilisateur',
                         ['action' => 'add'],
                         ['class' => 'btn btn-success btn-sm', 'escape' => false]
                     ) ?>
@@ -28,16 +28,16 @@ $this->assign('title', 'Users List');
                 <?php if (empty($users)): ?>
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle"></i>
-                        No users found. <?= $this->Html->link('Create one now', ['action' => 'add']) ?>
+                        Aucun utilisateur trouvé. <?= $this->Html->link('En créer un maintenant', ['action' => 'add']) ?>
                     </div>
                 <?php else: ?>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
+                                <th>Nom</th>
                                 <th>Email</th>
-                                <th>Created</th>
+                                <th>Créé le</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -52,7 +52,7 @@ $this->assign('title', 'Users List');
                                         <?= $this->Html->link(
                                             '<i class="fas fa-eye"></i>',
                                             ['action' => 'view', $user->getId()],
-                                            ['class' => 'btn btn-info btn-sm', 'escape' => false, 'title' => 'View']
+                                            ['class' => 'btn btn-info btn-sm', 'escape' => false, 'title' => 'Voir']
                                         ) ?>
                                     </td>
                                 </tr>
@@ -71,17 +71,17 @@ $this->assign('title', 'Users List');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-info-circle"></i>
-                    Architecture Note
+                    Note sur l'architecture
                 </h3>
             </div>
             <div class="card-body">
-                <p>This page demonstrates the hexagonal architecture in action:</p>
+                <p>Cette page démontre l'architecture hexagonale en action :</p>
                 <ul>
-                    <li><strong>Controller</strong> (<code>UsersController</code>) receives the <code>GetUserUseCase</code> via automatic dependency injection</li>
-                    <li><strong>Use Case</strong> (<code>GetUserUseCase</code>) orchestrates the business logic</li>
-                    <li><strong>Repository Interface</strong> (<code>UserRepositoryInterface</code>) defines the contract in the domain layer</li>
-                    <li><strong>Repository Implementation</strong> (<code>UserRepository</code>) provides the CakePHP ORM adapter in the infrastructure layer</li>
-                    <li><strong>Domain Entity</strong> (<code>User</code>) contains the business logic and validation rules</li>
+                    <li><strong>Controller</strong> (<code>UsersController</code>) reçoit le <code>GetUserUseCase</code> via l'injection de dépendances automatique</li>
+                    <li><strong>Use Case</strong> (<code>GetUserUseCase</code>) orchestre la logique métier</li>
+                    <li><strong>Interface de Repository</strong> (<code>UserRepositoryInterface</code>) définit le contrat dans la couche domaine</li>
+                    <li><strong>Implémentation du Repository</strong> (<code>UserRepository</code>) fournit l'adaptateur CakePHP ORM dans la couche infrastructure</li>
+                    <li><strong>Entité Domaine</strong> (<code>User</code>) contient la logique métier et les règles de validation</li>
                 </ul>
             </div>
         </div>

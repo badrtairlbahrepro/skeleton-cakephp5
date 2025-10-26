@@ -1,10 +1,10 @@
 <?php
 /**
- * User add template
+ * Template d'ajout d'utilisateur
  *
  * @var \App\View\AppView $this
  */
-$this->assign('title', 'Add User');
+$this->assign('title', 'Ajouter un utilisateur');
 ?>
 
 <div class="row">
@@ -13,16 +13,16 @@ $this->assign('title', 'Add User');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-user-plus mr-2"></i>
-                    Create New User
+                    Créer un nouvel utilisateur
                 </h3>
             </div>
             <?= $this->Form->create(null, ['class' => 'form-horizontal']) ?>
             <div class="card-body">
                 <?= $this->Form->control('name', [
                     'class' => 'form-control',
-                    'label' => ['text' => 'Name', 'class' => 'form-label'],
+                    'label' => ['text' => 'Nom', 'class' => 'form-label'],
                     'required' => true,
-                    'placeholder' => 'Enter user name'
+                    'placeholder' => 'Entrez le nom de l\'utilisateur'
                 ]) ?>
 
                 <?= $this->Form->control('email', [
@@ -30,16 +30,16 @@ $this->assign('title', 'Add User');
                     'class' => 'form-control',
                     'label' => ['text' => 'Email', 'class' => 'form-label'],
                     'required' => true,
-                    'placeholder' => 'Enter email address'
+                    'placeholder' => 'Entrez l\'adresse email'
                 ]) ?>
             </div>
             <div class="card-footer">
-                <?= $this->Form->button('Save User', [
+                <?= $this->Form->button('Enregistrer l\'utilisateur', [
                     'class' => 'btn btn-primary',
                     'escape' => false
                 ]) ?>
                 <?= $this->Html->link(
-                    '<i class="fas fa-times"></i> Cancel',
+                    '<i class="fas fa-times"></i> Annuler',
                     ['action' => 'index'],
                     ['class' => 'btn btn-default', 'escape' => false]
                 ) ?>
@@ -53,22 +53,22 @@ $this->assign('title', 'Add User');
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-lightbulb mr-2"></i>
-                    Use Case Pattern
+                    Patron Use Case
                 </h3>
             </div>
             <div class="card-body">
-                <p>When you submit this form:</p>
+                <p>Lorsque vous soumettez ce formulaire :</p>
                 <ol>
-                    <li>The <strong>Controller</strong> receives the request</li>
-                    <li>The <strong>CreateUserUseCase</strong> is automatically injected</li>
-                    <li>The use case validates business rules (email uniqueness)</li>
-                    <li>A <strong>Domain Entity</strong> is created with validation</li>
-                    <li>The <strong>Repository</strong> persists the entity</li>
-                    <li>All layers remain decoupled and testable</li>
+                    <li>Le <strong>Controller</strong> reçoit la requête</li>
+                    <li>Le <strong>CreateUserUseCase</strong> est automatiquement injecté</li>
+                    <li>Le use case valide les règles métier (unicité de l'email)</li>
+                    <li>Une <strong>Entité Domaine</strong> est créée avec validation</li>
+                    <li>Le <strong>Repository</strong> persiste l'entité</li>
+                    <li>Toutes les couches restent découplées et testables</li>
                 </ol>
                 <div class="alert alert-info">
                     <i class="fas fa-info-circle"></i>
-                    <strong>Note:</strong> Domain validation happens in the entity, while persistence logic is in the infrastructure layer.
+                    <strong>Note :</strong> La validation du domaine se fait dans l'entité, tandis que la logique de persistance est dans la couche infrastructure.
                 </div>
             </div>
         </div>

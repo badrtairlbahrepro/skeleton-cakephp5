@@ -39,7 +39,7 @@ class UsersController extends AppController
         try {
             // Assure que $id n'est pas null avant l'appel
             if ($id === null) {
-                $this->Flash->error('User ID is required');
+                $this->Flash->error('L\'ID de l\'utilisateur est requis');
                 return $this->redirect(['action' => 'index']);
             }
             $user = $getUserUseCase->execute($id);
@@ -68,7 +68,7 @@ class UsersController extends AppController
                     $data['name']
                 );
 
-                $this->Flash->success('The user has been saved.');
+                $this->Flash->success('L\'utilisateur a été enregistré.');
 
                 return $this->redirect(['action' => 'index']);
             } catch (\Exception $e) {
