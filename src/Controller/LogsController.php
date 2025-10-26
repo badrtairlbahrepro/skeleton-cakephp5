@@ -146,9 +146,32 @@ class LogsController extends AppController
             $message = substr($line, strlen($timestamp) + 1);
         }
 
-        // Try to extract level
+        // Try to extract level from CakePHP log format
+        // Format: YYYY-MM-DD HH:MM:SS [LEVEL] message
+        
+        // Method 1: Extract from brackets [ERROR]
         if (preg_match('/\[(ERROR|WARNING|DEBUG|INFO|NOTICE|CRITICAL)\]/i', $message, $matches)) {
             $level = strtolower($matches[1]);
+        }
+        // Method 2: Check if line contains error keywords
+        elseif (preg_match('/\b(error|exception|fatal|failure|failed)\b/i', $message)) {
+            $level = 'error';
+        }
+        // Method 3: Check for warning keywords
+        elseif (preg_match('/\b(warning|warn|deprecated|deprecation)\b/i', $message)) {
+            $level = 'warning';
+        }
+        // Method 4: Check for debug keywords
+        elseif (preg_match('/\b(debug|trace|traceback)\b/i', $message)) {
+            $level = 'debug';
+        }
+        // Method 5: Check for critical keywords
+        elseif (preg_match('/\b(critical|emergency|panic|alert)\b/i', $message)) {
+            $level = 'critical';
+        }
+        // Method 6: Check for notice keywords
+        elseif (preg_match('/\b(notice|informational)\b/i', $message)) {
+            $level = 'notice';
         }
 
         // Determine color based on level
