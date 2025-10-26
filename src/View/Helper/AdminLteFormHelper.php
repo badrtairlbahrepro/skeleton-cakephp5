@@ -164,6 +164,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Zone de texte avec icône
+     * @param array<string, mixed> $options
      */
     public function textareaInput(string $fieldName, array $options = []): string
     {
@@ -207,6 +208,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Champ fichier AdminLTE
+     * @param array<string, mixed> $options
      */
     public function fileInput(string $fieldName, array $options = []): string
     {
@@ -274,6 +276,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Sélecteur avec icône
+     * @param array<string, mixed> $options
      */
     public function selectInput(string $fieldName, array $options = []): string
     {
@@ -334,6 +337,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Sélecteur multiple avec icône
+     * @param array<string, mixed> $options
      */
     public function selectMultipleInput(string $fieldName, array $options = []): string
     {
@@ -395,6 +399,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Case à cocher
+     * @param array<string, mixed> $options
      */
     public function checkboxInput(string $fieldName, array $options = []): string
     {
@@ -423,6 +428,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Bouton radio
+     * @param array<string, mixed> $options
      */
     public function radioInput(string $fieldName, array $options = []): string
     {
@@ -463,6 +469,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Bouton de soumission
+     * @param array<string, mixed> $options
      */
     public function submitButton(string $text = 'Envoyer', array $options = []): string
     {
@@ -477,6 +484,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Bouton de réinitialisation
+     * @param array<string, mixed> $options
      */
     public function resetButton(string $text = 'Réinitialiser', array $options = []): string
     {
@@ -491,6 +499,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Switch personnalisé (toggle)
+     * @param array<string, mixed> $options
      */
     public function switchInput(string $fieldName, array $options = []): string
     {
