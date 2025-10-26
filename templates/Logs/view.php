@@ -31,19 +31,135 @@ $this->Html->css(['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/st
     </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const logSearch = document.getElementById('logSearch');
+    const levelFilter = document.getElementById('levelFilter');
+    const clearFilters = document.getElementById('clearFilters');
+    const resultCount = document.getElementById('resultCount');
+    const scrollToTop = document.getElementById('scrollToTop');
+    const logEntries = document.querySelectorAll('.log-entry');
+
+    function filterLogs() {
+        const searchTerm = logSearch.value.toLowerCase().trim();
+        const selectedLevel = levelFilter.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        logEntries.forEach(entry => {
+            const message = entry.dataset.message || '';
+            const level = entry.dataset.level || '';
+            
+            const matchesSearch = !searchTerm || message.includes(searchTerm);
+            const matchesLevel = !selectedLevel || level === selectedLevel;
+            
+            if (matchesSearch && matchesLevel) {
+                entry.style.display = 'flex';
+                visibleCount++;
+            } else {
+                entry.style.display = 'none';
+            }
+        });
+
+        // Update result count
+        if (searchTerm || selectedLevel) {
+            resultCount.style.display = 'inline-block';
+            resultCount.textContent = `${visibleCount} résultat(s)`;
+        } else {
+            resultCount.style.display = 'none';
+        }
+    }
+
+    // Event listeners
+    logSearch.addEventListener('input', filterLogs);
+    levelFilter.addEventListener('change', filterLogs);
+    
+    clearFilters.addEventListener('click', function() {
+        logSearch.value = '';
+        levelFilter.value = '';
+        filterLogs();
+    });
+
+    scrollToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
+
 <div class="content">
     <div class="container-fluid">
+        <!-- Search and Filter Panel -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-search"></i>
+                    Recherche et filtres
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="logSearch">
+                                <i class="fas fa-search"></i> Rechercher dans les logs
+                            </label>
+                            <input type="text" 
+                                   id="logSearch" 
+                                   class="form-control" 
+                                   placeholder="Tapez pour rechercher...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-filter"></i> Filtrer par niveau
+                            </label>
+                            <select id="levelFilter" class="form-control">
+                                <option value="">Tous les niveaux</option>
+                                <option value="error">❌ Error</option>
+                                <option value="warning">⚠️ Warning</option>
+                                <option value="critical">🔴 Critical</option>
+                                <option value="debug">🐛 Debug</option>
+                                <option value="info">ℹ️ Info</option>
+                                <option value="notice">💡 Notice</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-times-circle"></i> Actions
+                            </label>
+                            <div>
+                                <button id="clearFilters" class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-redo"></i> Réinitialiser
+                                </button>
+                                <span id="resultCount" class="badge badge-info ml-2" style="display: none;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="card card-dark">
             <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-list"></i>
-                    Log Entries (Page <?= $page ?> of <?= max(1, $totalPages) ?>)
+                    Entrées de log (Page <?= $page ?> sur <?= max(1, $totalPages) ?>)
                 </h3>
+                <div class="card-tools">
+                    <button id="scrollToTop" class="btn btn-sm btn-primary">
+                        <i class="fas fa-arrow-up"></i> Haut
+                    </button>
+                </div>
             </div>
             <div class="card-body p-0">
                 <div style="max-height: 600px; overflow-y: auto; font-family: monospace; font-size: 0.85rem; background: #1e1e1e; color: #d4d4d4;">
                     <?php foreach ($parsedLines as $index => $log): ?>
-                        <div style="padding: 8px 12px; border-bottom: 1px solid #333; display: flex; align-items: center;">
+                        <div class="log-entry" 
+                             data-level="<?= h(strtolower($log['level'])) ?>"
+                             data-message="<?= h(strtolower($log['message'])) ?>"
+                             style="padding: 8px 12px; border-bottom: 1px solid #333; display: flex; align-items: center;">
                             <!-- Line Number -->
                             <span style="color: #858585; width: 50px; text-align: right; margin-right: 12px; flex-shrink: 0;">
                                 <?= ($totalLines - (($page - 1) * 100) - $index) ?>
@@ -55,7 +171,8 @@ $this->Html->css(['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/st
                             </span>
                             
                             <!-- Level Badge -->
-                            <span style="
+                            <span class="log-level"
+                                  style="
                                 background: <?= $log['color'] ?>;
                                 color: white;
                                 padding: 2px 8px;
@@ -71,7 +188,7 @@ $this->Html->css(['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/st
                             </span>
                             
                             <!-- Message -->
-                            <span style="color: #CE9178; margin-left: 12px; word-break: break-word; flex-grow: 1;">
+                            <span class="log-message" style="color: #CE9178; margin-left: 12px; word-break: break-word; flex-grow: 1;">
                                 <?= h($log['message']) ?>
                             </span>
                         </div>
