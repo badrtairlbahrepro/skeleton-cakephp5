@@ -33,7 +33,7 @@ interface UserRepositoryInterface
     /**
      * Récupérer tous les utilisateurs
      *
-     * @return array
+     * @return array<int, User>
      */
     public function findAll(): array;
 

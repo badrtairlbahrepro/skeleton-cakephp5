@@ -155,7 +155,7 @@ class User
     /**
      * Convertir en tableau
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function toArray(): array
     {

@@ -131,6 +131,7 @@ class LogsController extends AppController
 
     /**
      * Parser et colorer une ligne de log
+     * @return array<string, mixed>
      */
     private function parseLogLine(string $line): array
     {

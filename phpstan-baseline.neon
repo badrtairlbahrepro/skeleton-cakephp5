@@ -76,11 +76,6 @@ parameters:
 			path: src/Controller/LogsController.php
 
 		-
-			message: "#^Method App\\\\Controller\\\\LogsController\\:\\:parseLogLine\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Controller/LogsController.php
-
-		-
 			message: "#^Method Cake\\\\Controller\\\\Controller\\:\\:__construct\\(\\) invoked with 5 parameters, 1\\-4 required\\.$#"
 			count: 1
 			path: src/Controller/LogsController.php
@@ -146,32 +141,32 @@ parameters:
 			path: src/Controller/UsersController.php
 
 		-
-			message: "#^Method Domain\\\\User\\\\Entity\\\\User\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Domain/User/Entity/User.php
-
-		-
-			message: "#^Method Domain\\\\User\\\\Repository\\\\UserRepositoryInterface\\:\\:findAll\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Domain/User/Repository/UserRepositoryInterface.php
-
-		-
 			message: "#^Property Infrastructure\\\\DependencyInjection\\\\ServiceProvider\\:\\:\\$container is never read, only written\\.$#"
 			count: 1
 			path: src/Infrastructure/DependencyInjection/ServiceProvider.php
 
 		-
-			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\Table\\\\UsersTable\\:\\:initialize\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/Table/UsersTable.php
-
-		-
-			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:findAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$created\\.$#"
 			count: 1
 			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
 
 		-
-			message: "#^Method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:toDomainEntity\\(\\) has parameter \\$entity with no type specified\\.$#"
+			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$email\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
+
+		-
+			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$modified\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
+
+		-
+			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$name\\.$#"
+			count: 1
+			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
+
+		-
+			message: "#^Parameter \\#1 \\$entity of method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:toDomainEntity\\(\\) expects Cake\\\\ORM\\\\Entity, Cake\\\\Datasource\\\\EntityInterface given\\.$#"
 			count: 1
 			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
 

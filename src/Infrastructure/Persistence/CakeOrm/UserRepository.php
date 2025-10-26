@@ -64,6 +64,7 @@ class UserRepository implements UserRepositoryInterface
 
     /**
      * Récupérer tous les utilisateurs
+     * @return array<int, User>
      */
     public function findAll(): array
     {
@@ -111,6 +112,7 @@ class UserRepository implements UserRepositoryInterface
 
     /**
      * Convertir une ligne ORM en entité domaine
+     * @param \Cake\ORM\Entity $entity Entity ORM
      */
     private function toDomainEntity($entity): User
     {

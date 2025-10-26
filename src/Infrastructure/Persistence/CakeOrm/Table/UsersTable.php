@@ -17,7 +17,7 @@ class UsersTable extends Table
     /**
      * Initialize method
      *
-     * @param array $config Configuration options
+     * @param array<string, mixed> $config Configuration options
      * @return void
      */
     public function initialize(array $config): void
