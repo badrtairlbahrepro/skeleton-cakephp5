@@ -121,26 +121,6 @@ parameters:
 			path: src/Controller/PagesController.php
 
 		-
-			message: "#^Function __ not found\\.$#"
-			count: 1
-			path: src/Controller/UsersController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\UsersController\\:\\:add\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
-			count: 1
-			path: src/Controller/UsersController.php
-
-		-
-			message: "#^Method App\\\\Controller\\\\UsersController\\:\\:view\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
-			count: 1
-			path: src/Controller/UsersController.php
-
-		-
-			message: "#^Parameter \\#1 \\$id of method Application\\\\UseCases\\\\User\\\\GetUserUseCase\\:\\:execute\\(\\) expects int, int\\|null given\\.$#"
-			count: 1
-			path: src/Controller/UsersController.php
-
-		-
 			message: "#^Property Infrastructure\\\\DependencyInjection\\\\ServiceProvider\\:\\:\\$container is never read, only written\\.$#"
 			count: 1
 			path: src/Infrastructure/DependencyInjection/ServiceProvider.php

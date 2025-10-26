@@ -34,11 +34,17 @@ class UsersController extends AppController
      * @param int|null $id User id
      * @return \Cake\Http\Response|null
      */
-    public function view(GetUserUseCase $getUserUseCase, ?int $id = null)
+    public function view(GetUserUseCase $getUserUseCase, ?int $id = null): ?\Cake\Http\Response
     {
         try {
+            // Assure que $id n'est pas null avant l'appel
+            if ($id === null) {
+                $this->Flash->error('User ID is required');
+                return $this->redirect(['action' => 'index']);
+            }
             $user = $getUserUseCase->execute($id);
             $this->set(compact('user'));
+            return null;
         } catch (\RuntimeException $e) {
             $this->Flash->error($e->getMessage());
             return $this->redirect(['action' => 'index']);
@@ -51,7 +57,7 @@ class UsersController extends AppController
      * @param \Application\UseCases\User\CreateUserUseCase $createUserUseCase Injected use case
      * @return \Cake\Http\Response|null
      */
-    public function add(CreateUserUseCase $createUserUseCase)
+    public function add(CreateUserUseCase $createUserUseCase): ?\Cake\Http\Response
     {
         if ($this->request->is('post')) {
             $data = $this->request->getData();
@@ -62,13 +68,14 @@ class UsersController extends AppController
                     $data['name']
                 );
 
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success('The user has been saved.');
 
                 return $this->redirect(['action' => 'index']);
             } catch (\Exception $e) {
                 $this->Flash->error($e->getMessage());
             }
         }
+        return null;
     }
 
     /**
