@@ -5,16 +5,32 @@ declare(strict_types=1);
 namespace App\View\Helper;
 
 use Cake\View\Helper;
+use Cake\View\Helper\FormHelper;
+use Cake\View\Helper\HtmlHelper;
 
 /**
  * Helper AdminLTE pour les formulaires
  */
 class AdminLteFormHelper extends Helper
 {
+    /**
+     * @var array<string>
+     */
     protected array $helpers = ['Form', 'Html'];
 
     /**
+     * @var HtmlHelper
+     */
+    protected HtmlHelper $Html;
+
+    /**
+     * @var FormHelper
+     */
+    protected FormHelper $Form;
+
+    /**
      * Champ texte avec icône
+     * @param array<string, mixed> $options
      */
     public function textInput(string $fieldName, array $options = []): string
     {
@@ -62,6 +78,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Champ email avec icône
+     * @param array<string, mixed> $options
      */
     public function emailInput(string $fieldName, array $options = []): string
     {
@@ -72,6 +89,7 @@ class AdminLteFormHelper extends Helper
 
     /**
      * Champ mot de passe avec bouton afficher/masquer
+     * @param array<string, mixed> $options
      */
     public function passwordInput(string $fieldName, array $options = []): string
     {

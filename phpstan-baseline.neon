@@ -176,13 +176,8 @@ parameters:
 			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
 
 		-
-			message: "#^Access to an undefined property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$Form\\.$#"
-			count: 6
-			path: src/View/Helper/AdminLteFormHelper.php
-
-		-
-			message: "#^Access to an undefined property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$Html\\.$#"
-			count: 59
+			message: "#^Call to an undefined method Cake\\\\View\\\\Helper\\\\FormHelper\\:\\:input\\(\\)\\.$#"
+			count: 4
 			path: src/View/Helper/AdminLteFormHelper.php
 
 		-
@@ -191,17 +186,7 @@ parameters:
 			path: src/View/Helper/AdminLteFormHelper.php
 
 		-
-			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:emailInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/View/Helper/AdminLteFormHelper.php
-
-		-
 			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:fileInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/View/Helper/AdminLteFormHelper.php
-
-		-
-			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:passwordInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/View/Helper/AdminLteFormHelper.php
 
@@ -236,16 +221,6 @@ parameters:
 			path: src/View/Helper/AdminLteFormHelper.php
 
 		-
-			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:textInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/View/Helper/AdminLteFormHelper.php
-
-		-
 			message: "#^Method App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:textareaInput\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/View/Helper/AdminLteFormHelper.php
-
-		-
-			message: "#^Property App\\\\View\\\\Helper\\\\AdminLteFormHelper\\:\\:\\$helpers type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/View/Helper/AdminLteFormHelper.php
