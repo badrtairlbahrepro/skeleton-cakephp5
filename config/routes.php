@@ -36,12 +36,15 @@ $routes->scope('/', function (RouteBuilder $builder): void {
     $builder->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**
-     * Logs Viewer Routes (Telescope-like interface)
+     * Logs Viewer Routes (Telescope-like interface) - Plugin LogViewer
      */
-    $builder->connect('/logs', ['controller' => 'Logs', 'action' => 'index']);
-    $builder->connect('/logs/view/*', ['controller' => 'Logs', 'action' => 'view']);
-    $builder->connect('/logs/clear/*', ['controller' => 'Logs', 'action' => 'clear']);
-    $builder->connect('/logs/download/*', ['controller' => 'Logs', 'action' => 'download']);
+    $builder->scope('/logs', function (RouteBuilder $routes) {
+        $routes->connect('/', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'index']);
+        $routes->connect('/export/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'export']);
+        $routes->connect('/view/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'view']);
+        $routes->connect('/clear/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'clear']);
+        $routes->connect('/download/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'download']);
+    });
 
     /**
      * Components Library Routes

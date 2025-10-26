@@ -7,6 +7,7 @@ require __DIR__ . '/paths.php';
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
+use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\ConsoleErrorHandler;
 use Cake\Error\ErrorHandler;
@@ -122,4 +123,6 @@ ServerRequest::addDetector('tablet', function ($request) {
 
 /*
  * You can load custom plugins here
+ * Note: CakePHP 5 charges automatiquement les plugins via composer.json
+ * Le plugin LogViewer est déjà chargé automatiquement
  */

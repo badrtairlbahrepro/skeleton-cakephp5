@@ -26,6 +26,16 @@ $this->Html->css(['https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/st
                     ['action' => 'download', str_replace('.log', '', $filename)],
                     ['class' => 'btn btn-success btn-sm', 'escape' => false]
                 ) ?>
+                <?= $this->Html->link(
+                    '<i class="fas fa-file-csv"></i> Export CSV',
+                    ['action' => 'export', str_replace('.log', '', $filename), '?' => ['format' => 'csv', 'date_from' => $dateFrom, 'date_to' => $dateTo]],
+                    ['class' => 'btn btn-info btn-sm', 'escape' => false]
+                ) ?>
+                <?= $this->Html->link(
+                    '<i class="fas fa-file-code"></i> Export JSON',
+                    ['action' => 'export', str_replace('.log', '', $filename), '?' => ['format' => 'json', 'date_from' => $dateFrom, 'date_to' => $dateTo]],
+                    ['class' => 'btn btn-warning btn-sm', 'escape' => false]
+                ) ?>
             </div>
         </div>
     </div>
@@ -87,6 +97,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="content">
     <div class="container-fluid">
+        <!-- Statistics Panel -->
+        <?php if (isset($stats) && is_array($stats)): ?>
+        <div class="row mb-3">
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3><?= $stats['error'] ?? 0 ?></h3>
+                        <p>Erreurs</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3><?= $stats['warning'] ?? 0 ?></h3>
+                        <p>Avertissements</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3><?= $stats['info'] ?? 0 ?></h3>
+                        <p>Info</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h3><?= $stats['debug'] ?? 0 ?></h3>
+                        <p>Debug</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-gradient-red">
+                    <div class="inner">
+                        <h3><?= $stats['critical'] ?? 0 ?></h3>
+                        <p>Critique</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3><?= $stats['total'] ?? 0 ?></h3>
+                        <p>Total</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
         <!-- Search and Filter Panel -->
         <div class="card card-primary">
             <div class="card-header">
@@ -96,6 +178,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 </h3>
             </div>
             <div class="card-body">
+                <form method="get" action="<?= $this->Url->build(['action' => 'view', str_replace('.log', '', $filename)]) ?>">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="date_from">
+                                    <i class="fas fa-calendar"></i> Date de début
+                                </label>
+                                <input type="date" 
+                                       id="date_from" 
+                                       name="date_from" 
+                                       class="form-control" 
+                                       value="<?= h($dateFrom ?? '') ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="date_to">
+                                    <i class="fas fa-calendar"></i> Date de fin
+                                </label>
+                                <input type="date" 
+                                       id="date_to" 
+                                       name="date_to" 
+                                       class="form-control" 
+                                       value="<?= h($dateTo ?? '') ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-search"></i> Filtrer
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <a href="<?= $this->Url->build(['action' => 'view', str_replace('.log', '', $filename)]) ?>" class="btn btn-secondary btn-block">
+                                    <i class="fas fa-times"></i> Réinitialiser
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <hr>
+                
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
