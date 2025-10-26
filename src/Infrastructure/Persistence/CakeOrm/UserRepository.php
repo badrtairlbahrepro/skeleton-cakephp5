@@ -112,16 +112,21 @@ class UserRepository implements UserRepositoryInterface
 
     /**
      * Convertir une ligne ORM en entité domaine
-     * @param \Cake\ORM\Entity $entity Entity ORM
+     * @param \Cake\Datasource\EntityInterface $entity Entity ORM
      */
     private function toDomainEntity($entity): User
     {
+        /** @var \Cake\ORM\Entity $entity */
         return new User(
-            $entity->email,
-            $entity->name,
-            $entity->id,
-            $entity->created ? new \DateTimeImmutable($entity->created->format('Y-m-d H:i:s')) : null,
-            $entity->modified ? new \DateTimeImmutable($entity->modified->format('Y-m-d H:i:s')) : null
+            (string) $entity->get('email'),
+            (string) $entity->get('name'),
+            $entity->has('id') ? (int) $entity->get('id') : null,
+            $entity->has('created') && $entity->get('created') !== null
+                ? new \DateTimeImmutable($entity->get('created')->format('Y-m-d H:i:s'))
+                : null,
+            $entity->has('modified') && $entity->get('modified') !== null
+                ? new \DateTimeImmutable($entity->get('modified')->format('Y-m-d H:i:s'))
+                : null
         );
     }
 }

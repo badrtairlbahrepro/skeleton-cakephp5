@@ -146,31 +146,6 @@ parameters:
 			path: src/Infrastructure/DependencyInjection/ServiceProvider.php
 
 		-
-			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$created\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
-
-		-
-			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$email\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
-
-		-
-			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$modified\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
-
-		-
-			message: "#^Access to an undefined property Cake\\\\ORM\\\\Entity\\:\\:\\$name\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
-
-		-
-			message: "#^Parameter \\#1 \\$entity of method Infrastructure\\\\Persistence\\\\CakeOrm\\\\UserRepository\\:\\:toDomainEntity\\(\\) expects Cake\\\\ORM\\\\Entity, Cake\\\\Datasource\\\\EntityInterface given\\.$#"
-			count: 1
-			path: src/Infrastructure/Persistence/CakeOrm/UserRepository.php
-
-		-
 			message: "#^Call to an undefined method Cake\\\\View\\\\Helper\\\\FormHelper\\:\\:input\\(\\)\\.$#"
 			count: 4
 			path: src/View/Helper/AdminLteFormHelper.php
