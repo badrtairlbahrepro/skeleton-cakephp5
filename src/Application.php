@@ -37,7 +37,7 @@ class Application extends BaseApplication
 
         // Charger le plugin Migrations
         $this->addPlugin('Migrations');
-        
+
         // Charger le plugin LogViewer
         $this->addPlugin('LogViewer');
 
