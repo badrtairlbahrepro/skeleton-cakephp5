@@ -37,20 +37,18 @@ class Application extends BaseApplication
 
         // Charger le plugin Migrations
         $this->addPlugin('Migrations');
-
-        // Charger le plugin LogViewer
+        
+        // Charger les plugins personnalisés
         $this->addPlugin('LogViewer', [
             'routes' => true,
             'bootstrap' => false,
         ]);
 
-        // Charger le plugin AdminLteForm
         $this->addPlugin('AdminLteForm', [
             'routes' => true,
             'bootstrap' => false,
         ]);
 
-        // Charger le plugin CakeQualityTools
         $this->addPlugin('CakeQualityTools', [
             'routes' => true,
             'bootstrap' => false,
