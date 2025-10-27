@@ -148,7 +148,7 @@ $cakeDescription = 'CakePHP: Hexagonal Architecture with DDD';
     </div>
 
     <footer class="main-footer">
-        <strong>CakePHP</strong> Skeleton with Hexagonal Architecture &copy; 2024.
+        <strong>CakePHP</strong> Skeleton with Hexagonal Architecture &copy; 2025.
     </footer>
 </div>
 
