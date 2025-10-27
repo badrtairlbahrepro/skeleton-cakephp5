@@ -65,6 +65,32 @@ $builder->scope('/form-builder', function (RouteBuilder $routes) {
     $routes->connect('/switches', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'switches']);
 });
 
+/**
+ * Quality Tools Routes - Plugin CakeQualityTools
+ */
+$builder->scope('/quality-tools', function (RouteBuilder $routes) {
+    $routes->connect('/', [
+        'plugin' => 'CakeQualityTools',
+        'controller' => 'QualityTools',
+        'action' => 'index'
+    ]);
+    $routes->connect('/run-tests', [
+        'plugin' => 'CakeQualityTools',
+        'controller' => 'QualityTools',
+        'action' => 'runTests'
+    ]);
+    $routes->connect('/run-stan', [
+        'plugin' => 'CakeQualityTools',
+        'controller' => 'QualityTools',
+        'action' => 'runStan'
+    ]);
+    $routes->connect('/run-cs', [
+        'plugin' => 'CakeQualityTools',
+        'controller' => 'QualityTools',
+        'action' => 'runCodeSniffer'
+    ]);
+});
+
     /**
      * Connect catchall routes for all controllers.
      *

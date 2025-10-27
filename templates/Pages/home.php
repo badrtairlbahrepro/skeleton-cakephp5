@@ -60,7 +60,66 @@ $this->assign('title', 'Bienvenue');
             <div class="icon">
                 <i class="fas fa-paint-brush"></i>
             </div>
-            <?= $this->Html->link('Plus d\'infos <i class="fas fa-arrow-circle-right"></i>', ['controller' => 'Formbuilder', 'action' => 'index', 'index'], ['class' => 'small-box-footer', 'escape' => false, 'target' => '_blank']) ?>
+            <?= $this->Html->link('Plus d\'infos <i class="fas fa-arrow-circle-right"></i>', '/form-builder', ['class' => 'small-box-footer', 'escape' => false]) ?>
+        </div>
+    </div>
+</div>
+
+<!-- Second Row: New Links -->
+<div class="row mt-2">
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-purple">
+            <div class="inner">
+                <h3><i class="fas fa-tasks"></i> Outils</h3>
+                <p>Qualité du Code</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-vial"></i>
+            </div>
+            <?= $this->Html->link('Voir <i class="fas fa-arrow-circle-right"></i>', '/quality-tools', ['class' => 'small-box-footer', 'escape' => false]) ?>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="inner">
+                <h3><i class="fas fa-flask"></i> Tests</h3>
+                <p>Guide Complet</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-book"></i>
+            </div>
+            <?= $this->Html->link('Guide <i class="fas fa-arrow-circle-right"></i>', '/pages/test-guide', ['class' => 'small-box-footer', 'escape' => false]) ?>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3><i class="fas fa-tools"></i> Qualité</h3>
+                <p>Configuration</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-cog"></i>
+            </div>
+            <?= $this->Html->link('Config <i class="fas fa-arrow-circle-right"></i>', '/pages/quality-guide', ['class' => 'small-box-footer', 'escape' => false]) ?>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-secondary">
+            <div class="inner">
+                <h3><i class="fas fa-file-alt"></i> Logs</h3>
+                <p>Visualiseur</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <?= $this->Html->link('Logs <i class="fas fa-arrow-circle-right"></i>', '/logs', ['class' => 'small-box-footer', 'escape' => false]) ?>
         </div>
     </div>
 </div>

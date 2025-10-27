@@ -4,78 +4,59 @@ parameters:
 			message: "#^Class App\\\\Application extends generic class Cake\\\\Http\\\\BaseApplication but does not specify its types\\: TSubject$#"
 			count: 1
 			path: src/Application.php
-
 		-
 			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, string\\|false given\\.$#"
 			count: 1
 			path: src/Console/Installer.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\AppController\\:\\:beforeRender\\(\\) has parameter \\$event with generic interface Cake\\\\Event\\\\EventInterface but does not specify its types\\: TSubject$#"
 			count: 1
 			path: src/Controller/AppController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ComponentsController\\:\\:loadComponents\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Controller/ComponentsController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ComponentsController\\:\\:view\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
 			count: 1
 			path: src/Controller/ComponentsController.php
-
 		-
 			message: "#^Parameter \\#1 \\$json of function json_decode expects string, string\\|false given\\.$#"
 			count: 1
 			path: src/Controller/ComponentsController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error400\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error401\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error403\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error404\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:error500\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:generic\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\ErrorTestController\\:\\:index\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/Controller/ErrorTestController.php
-
 		-
 			message: "#^Method App\\\\Controller\\\\PagesController\\:\\:display\\(\\) should return Cake\\\\Http\\\\Response\\|null but return statement is missing\\.$#"
 			count: 1
 			path: src/Controller/PagesController.php
-
 		-
 			message: "#^Property Infrastructure\\\\DependencyInjection\\\\ServiceProvider\\:\\:\\$container is never read, only written\\.$#"
 			count: 1
 			path: src/Infrastructure/DependencyInjection/ServiceProvider.php
-
-		-
-			message: "#^Call to an undefined method Cake\\\\View\\\\Helper\\\\FormHelper\\:\\:input\\(\\)\\.$#"
-			count: 4
-			path: src/View/Helper/AdminLteFormHelper.php

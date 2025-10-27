@@ -56,13 +56,6 @@ $cakeDescription = 'CakePHP: Hexagonal Architecture with DDD';
         .navbar { font-size: 0.875rem !important; }
         .nav-link { font-size: 0.875rem !important; padding: 0.5rem 0.75rem !important; }
         
-        /* Sidebar */
-        .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link,
-        .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-treeview>.nav-item>.nav-link {
-            font-size: 0.875rem !important;
-            padding: 0.5rem 1rem !important;
-        }
-        
         /* Cards */
         .card-header { font-size: 0.875rem !important; }
         .card-body { font-size: 0.875rem !important; }
@@ -88,47 +81,22 @@ $cakeDescription = 'CakePHP: Hexagonal Architecture with DDD';
         a { font-size: 0.875rem !important; }
     </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <ul class="navbar-nav">
+<body class="hold-transition">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" style="z-index: 1030;">
+    <div class="container-fluid">
+        <ul class="navbar-nav ms-auto me-auto">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
                 <a href="/" class="nav-link">Home</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
+            <li class="nav-item">
                 <a href="/users" class="nav-link">Users</a>
             </li>
         </ul>
-    </nav>
+    </div>
+</nav>
 
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="/" class="brand-link">
-            <span class="brand-text font-weight-light">CakePHP</span>
-        </a>
-        <div class="sidebar">
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <i class="nav-icon fas fa-home"></i>
-                            <p>Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/users" class="nav-link">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>Users</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <div class="content-wrapper">
+<div class="wrapper">
+    <div class="content-wrapper" style="margin-left: 0; margin-top: 70px;">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">

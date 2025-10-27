@@ -44,6 +44,9 @@ class Application extends BaseApplication
         // Charger le plugin AdminLteForm
         $this->addPlugin('AdminLteForm');
 
+        // Charger le plugin CakeQualityTools
+        $this->addPlugin('CakeQualityTools');
+
         if (PHP_SAPI !== 'cli') {
             FactoryLocator::add(
                 'Table',
