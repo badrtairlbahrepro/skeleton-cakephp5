@@ -46,6 +46,6 @@ class AppController extends Controller
         parent::beforeRender($event);
 
         // Charger le helper AdminLteForm pour tous les contrôleurs
-        $this->viewBuilder()->addHelper('AdminLteForm');
+        $this->viewBuilder()->addHelper('AdminLteForm.AdminLteForm');
     }
 }

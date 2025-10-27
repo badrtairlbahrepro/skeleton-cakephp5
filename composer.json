@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.1",
+        "badrtairlbahrepro/cakephp-adminlte-form": "dev-main",
         "badrtairlbahrepro/cakephp-log-viewer": "dev-main",
         "cakephp/cakephp": "^5.0",
         "cakephp/migrations": "^4.0",
@@ -12,6 +13,10 @@
         "mobiledetect/mobiledetectlib": "^4.8"
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/badrtairlbahrepro/cakephp-adminlte-form.git"
+        },
         {
             "type": "vcs",
             "url": "https://github.com/badrtairlbahrepro/cakephp-log-viewer.git"

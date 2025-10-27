@@ -41,6 +41,9 @@ class Application extends BaseApplication
         // Charger le plugin LogViewer
         $this->addPlugin('LogViewer');
 
+        // Charger le plugin AdminLteForm
+        $this->addPlugin('AdminLteForm');
+
         if (PHP_SAPI !== 'cli') {
             FactoryLocator::add(
                 'Table',

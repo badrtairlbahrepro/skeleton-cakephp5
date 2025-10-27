@@ -52,14 +52,18 @@ $routes->scope('/', function (RouteBuilder $builder): void {
 $builder->connect('/components', ['controller' => 'Components', 'action' => 'index']);
 $builder->connect('/components/:group', ['controller' => 'Components', 'action' => 'view']);
 
-// Routes pour le FormBuilder AdminLTE
-$builder->connect('/form-builder', ['controller' => 'FormBuilder', 'action' => 'index']);
-$builder->connect('/form-builder/contact', ['controller' => 'FormBuilder', 'action' => 'contact']);
-$builder->connect('/form-builder/register', ['controller' => 'FormBuilder', 'action' => 'register']);
-$builder->connect('/form-builder/profile', ['controller' => 'FormBuilder', 'action' => 'profile']);
-$builder->connect('/form-builder/search', ['controller' => 'FormBuilder', 'action' => 'search']);
-$builder->connect('/form-builder/multiple', ['controller' => 'FormBuilder', 'action' => 'multiple']);
-$builder->connect('/form-builder/switches', ['controller' => 'FormBuilder', 'action' => 'switches']);
+/**
+ * FormBuilder Routes - Plugin AdminLteForm
+ */
+$builder->scope('/form-builder', function (RouteBuilder $routes) {
+    $routes->connect('/', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'index']);
+    $routes->connect('/contact', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'contact']);
+    $routes->connect('/register', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'register']);
+    $routes->connect('/profile', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'profile']);
+    $routes->connect('/search', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'search']);
+    $routes->connect('/multiple', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'multiple']);
+    $routes->connect('/switches', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'switches']);
+});
 
     /**
      * Connect catchall routes for all controllers.
