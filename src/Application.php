@@ -39,13 +39,22 @@ class Application extends BaseApplication
         $this->addPlugin('Migrations');
 
         // Charger le plugin LogViewer
-        $this->addPlugin('LogViewer');
+        $this->addPlugin('LogViewer', [
+            'routes' => true,
+            'bootstrap' => false,
+        ]);
 
         // Charger le plugin AdminLteForm
-        $this->addPlugin('AdminLteForm');
+        $this->addPlugin('AdminLteForm', [
+            'routes' => true,
+            'bootstrap' => false,
+        ]);
 
         // Charger le plugin CakeQualityTools
-        $this->addPlugin('CakeQualityTools');
+        $this->addPlugin('CakeQualityTools', [
+            'routes' => true,
+            'bootstrap' => false,
+        ]);
 
         if (PHP_SAPI !== 'cli') {
             FactoryLocator::add(

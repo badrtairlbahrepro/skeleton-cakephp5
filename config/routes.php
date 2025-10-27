@@ -35,16 +35,6 @@ $routes->scope('/', function (RouteBuilder $builder): void {
      */
     $builder->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
-    /**
-     * Logs Viewer Routes (Telescope-like interface) - Plugin LogViewer
-     */
-    $builder->scope('/logs', function (RouteBuilder $routes) {
-        $routes->connect('/', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'index']);
-        $routes->connect('/export/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'export']);
-        $routes->connect('/view/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'view']);
-        $routes->connect('/clear/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'clear']);
-        $routes->connect('/download/*', ['plugin' => 'LogViewer', 'controller' => 'Logs', 'action' => 'download']);
-    });
 
     /**
      * Components Library Routes
@@ -53,43 +43,9 @@ $builder->connect('/components', ['controller' => 'Components', 'action' => 'ind
 $builder->connect('/components/:group', ['controller' => 'Components', 'action' => 'view']);
 
 /**
- * FormBuilder Routes - Plugin AdminLteForm
+ * Plugin routes are automatically loaded from plugin config/routes.php files
+ * No manual configuration needed - routes load automatically
  */
-$builder->scope('/form-builder', function (RouteBuilder $routes) {
-    $routes->connect('/', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'index']);
-    $routes->connect('/contact', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'contact']);
-    $routes->connect('/register', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'register']);
-    $routes->connect('/profile', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'profile']);
-    $routes->connect('/search', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'search']);
-    $routes->connect('/multiple', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'multiple']);
-    $routes->connect('/switches', ['plugin' => 'AdminLteForm', 'controller' => 'FormBuilder', 'action' => 'switches']);
-});
-
-/**
- * Quality Tools Routes - Plugin CakeQualityTools
- */
-$builder->scope('/quality-tools', function (RouteBuilder $routes) {
-    $routes->connect('/', [
-        'plugin' => 'CakeQualityTools',
-        'controller' => 'QualityTools',
-        'action' => 'index'
-    ]);
-    $routes->connect('/run-tests', [
-        'plugin' => 'CakeQualityTools',
-        'controller' => 'QualityTools',
-        'action' => 'runTests'
-    ]);
-    $routes->connect('/run-stan', [
-        'plugin' => 'CakeQualityTools',
-        'controller' => 'QualityTools',
-        'action' => 'runStan'
-    ]);
-    $routes->connect('/run-cs', [
-        'plugin' => 'CakeQualityTools',
-        'controller' => 'QualityTools',
-        'action' => 'runCodeSniffer'
-    ]);
-});
 
     /**
      * Connect catchall routes for all controllers.
