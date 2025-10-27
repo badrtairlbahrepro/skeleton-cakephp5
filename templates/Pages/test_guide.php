@@ -22,25 +22,25 @@
                     <hr>
 
                     <h3><i class="fas fa-flask"></i> Introduction</h3>
-                    <p>Ce guide explique <strong>comment tester votre code</strong> avec les outils installés dans le projet.</p>
+                    <p>Ce guide présente les <strong>bonnes pratiques de test</strong> et les outils disponibles dans le projet.</p>
 
-                    <h4>🎯 Objectifs</h4>
+                    <h4>Objectifs</h4>
                     <ul>
-                        <li>✅ Comprendre pourquoi tester</li>
-                        <li>✅ Savoir écrire des tests</li>
-                        <li>✅ Utiliser les commandes de test</li>
-                        <li>✅ Interpréter les résultats</li>
+                        <li>✅ Comprendre les principes du test unitaire</li>
+                        <li>✅ Maîtriser l'écriture de tests PHPUnit</li>
+                        <li>✅ Utiliser les commandes de test appropriées</li>
+                        <li>✅ Interpréter les résultats et les rapports de couverture</li>
                     </ul>
 
                     <hr>
 
-                    <h3><i class="fas fa-vial"></i> 1. PHPUnit - Les Tests</h3>
+                    <h3><i class="fas fa-vial"></i> 1. PHPUnit - Framework de Tests</h3>
                     
-                    <h4>Qu'est-ce que c'est ?</h4>
-                    <p><strong>PHPUnit</strong> vérifie que votre code fonctionne correctement.</p>
+                    <h4>Présentation</h4>
+                    <p><strong>PHPUnit</strong> est le framework de référence pour l'exécution de tests unitaires en PHP. Il permet de valider le comportement attendu du code.</p>
 
-                    <h5>Exemple simple :</h5>
-                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('// Votre fonction
+                    <h5>Exemple d'implémentation :</h5>
+                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('// Fonction métier
 function addition(int $a, int $b): int 
 {
     return $a + $b;
@@ -50,121 +50,121 @@ function addition(int $a, int $b): int
 public function testAddition(): void
 {
     $result = addition(2, 3);
-    $this->assertEquals(5, $result); // ✅ Ça marche !
+    $this->assertEquals(5, $result);
 }') ?></code></pre>
 
-                    <h5>Pourquoi c'est important ?</h5>
+                    <h5>Avantages du test automatisé :</h5>
                     <ul>
-                        <li>✅ Vous savez immédiatement si quelque chose casse</li>
-                        <li>✅ Vous pouvez modifier votre code en confiance</li>
-                        <li>✅ Les tests sont comme une documentation vivante</li>
+                        <li>✅ Détection immédiate des régressions</li>
+                        <li>✅ Refactoring sécurisé avec validation continue</li>
+                        <li>✅ Documentation exécutable du comportement attendu</li>
                     </ul>
 
                     <hr>
 
-                    <h3><i class="fas fa-code"></i> 2. Comment Écrire un Test ?</h3>
+                    <h3><i class="fas fa-code"></i> 2. Structure d'un Test</h3>
 
-                    <h4>Structure AAA (Arrange-Act-Assert)</h4>
-                    <p><strong>Chaque test suit ces 3 étapes :</strong></p>
+                    <h4>Pattern AAA (Arrange-Act-Assert)</h4>
+                    <p><strong>Chaque test suit obligatoirement cette structure en trois phases :</strong></p>
 
                     <pre class="bg-dark text-light p-3 rounded"><code><?= h('public function testCreateUser(): void
 {
-    // 🎯 ARRANGE - Préparer les données
+    // ARRANGE - Préparation des données de test
     $email = \'john@example.com\';
     $name = \'John Doe\';
     
-    // ⚡ ACT - Exécuter le code à tester
+    // ACT - Exécution du code sous test
     $user = new User($email, $name);
     
-    // ✅ ASSERT - Vérifier le résultat
+    // ASSERT - Vérification des résultats attendus
     $this->assertEquals($email, $user->getEmail());
     $this->assertEquals($name, $user->getName());
 }') ?></code></pre>
 
                     <hr>
 
-                    <h3><i class="fas fa-folder"></i> 3. Les Tests Existants</h3>
+                    <h3><i class="fas fa-folder"></i> 3. Architecture des Tests</h3>
 
-                    <h4>Fichiers de Test Disponibles</h4>
+                    <h4>Structure des Fichiers de Test</h4>
                     <pre class="bg-dark text-light p-3 rounded"><code><?= h('tests/TestCase/
 ├── Domain/
 │   └── User/
 │       └── Entity/
-│           └── UserTest.php              # 13 tests
+│           └── UserTest.php              # 13 cas de test
 ├── Application/
 │   └── UseCases/
 │       └── User/
-│           ├── CreateUserUseCaseTest.php  # 6 tests
-│           └── GetUserUseCaseTest.php     # 6 tests') ?></code></pre>
+│           ├── CreateUserUseCaseTest.php  # 6 cas de test
+│           └── GetUserUseCaseTest.php     # 6 cas de test') ?></code></pre>
 
-                    <p><strong>Total : 25 tests, 65 assertions</strong></p>
+                    <p><strong>Métriques : 25 tests, 65 assertions au total</strong></p>
 
                     <hr>
 
-                    <h3><i class="fas fa-terminal"></i> 4. Lancer les Tests</h3>
+                    <h3><i class="fas fa-terminal"></i> 4. Exécution des Tests</h3>
 
-                    <h4>Commandes de Base</h4>
-                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('# Tous les tests
+                    <h4>Commandes Disponibles</h4>
+                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('# Exécuter toute la suite de tests
 ./vendor/bin/phpunit tests/TestCase/ --testdox
 
-# Un dossier spécifique
+# Exécuter les tests d\'un domaine spécifique
 ./vendor/bin/phpunit tests/TestCase/Domain/ --testdox
 
-# Un fichier spécifique
+# Exécuter un fichier de test spécifique
 ./vendor/bin/phpunit tests/TestCase/Domain/User/Entity/UserTest.php --testdox
 
-# Une méthode spécifique
+# Exécuter une méthode de test spécifique
 ./vendor/bin/phpunit --filter testCreateUserWithValidData
 
-# S\'arrêter au premier échec
+# Arrêter l\'exécution dès le premier échec
 ./vendor/bin/phpunit tests/ --stop-on-failure') ?></code></pre>
 
                     <hr>
 
-                    <h3><i class="fas fa-chart-line"></i> 5. Interpréter les Résultats</h3>
+                    <h3><i class="fas fa-chart-line"></i> 5. Interprétation des Résultats</h3>
 
-                    <h4>✅ Test Réussi</h4>
+                    <h4>✅ Cas de Test Réussi</h4>
                     <pre class="bg-success text-white p-3 rounded"><code><?= h('✔ Create user with valid data
 Time: 00:00.035
 OK (1 test, 2 assertions)') ?></code></pre>
-                    <p><strong>Signification :</strong> Tout fonctionne correctement.</p>
+                    <p><strong>Interprétation :</strong> Le test a validé toutes les assertions. Le code répond aux attentes.</p>
 
-                    <h4>❌ Test Échoué</h4>
+                    <h4>❌ Cas de Test Échoué</h4>
                     <pre class="bg-danger text-white p-3 rounded"><code><?= h('✘ Create user with valid data
 Failed asserting that 2 matches expected 5.') ?></code></pre>
-                    <p><strong>Signification :</strong> Le résultat obtenu (2) ne correspond pas à ce qui était attendu (5).</p>
+                    <p><strong>Interprétation :</strong> La valeur obtenue (2) diffère de la valeur attendue (5). Défaillance détectée dans la logique métier.</p>
 
                     <hr>
 
-                    <h3><i class="fas fa-magic"></i> 6. Les Mocks</h3>
+                    <h3><i class="fas fa-magic"></i> 6. Objets de Simulation (Mocks)</h3>
 
-                    <h4>Qu'est-ce qu'un Mock ?</h4>
-                    <p>Un <strong>mock</strong> est un objet factice qui simule le comportement d'un vrai objet.</p>
+                    <h4>Définition</h4>
+                    <p>Un <strong>mock</strong> est un objet de test qui simule le comportement d'une dépendance externe, permettant l'isolation du code sous test.</p>
 
-                    <h5>Pourquoi l'utiliser ?</h5>
-                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('Sans Mock: User → Repository → Database  ❌ Compliqué
-Avec Mock:  User → Mock Repository        ✅ Simple et rapide') ?></code></pre>
+                    <h5>Intérêt de l'utilisation</h5>
+                    <pre class="bg-dark text-light p-3 rounded"><code><?= h('Sans Mock: User → Repository → Database  ❌ Couplage fort
+Avec Mock:  User → Mock Repository        ✅ Isolation complète') ?></code></pre>
 
-                    <h5>Exemple avec Mock</h5>
+                    <h5>Exemple d'implémentation</h5>
                     <pre class="bg-dark text-light p-3 rounded"><code><?= h('protected function setUp(): void
 {
-    // Créer un mock du repository
+    // Création d\'un mock du repository
     $this->repositoryMock = $this->createMock(UserRepositoryInterface::class);
     
-    // Injecter le mock au use case
+    // Injection du mock dans le use case
     $this->useCase = new CreateUserUseCase($this->repositoryMock);
 }
 
 public function testCreateUser(): void
 {
-    // Configurer le mock
+    // Configuration du comportement du mock
     $this->repositoryMock
-        ->expects($this->once())        // Combien de fois ?
-        ->method(\'findByEmail\')         // Quelle méthode ?
-        ->with(\'john@example.com\')      // Avec quels paramètres ?
-        ->willReturn(null);             // Quel résultat ?
+        ->expects($this->once())        // Nombre d\'appels attendus
+        ->method(\'findByEmail\')         // Méthode à simuler
+        ->with(\'john@example.com\')      // Paramètres attendus
+        ->willReturn(null);             // Valeur de retour
     
-    // Exécuter le code
+    // Exécution du use case
     $result = $this->useCase->execute(\'john@example.com\', \'John\');
 }') ?></code></pre>
 
@@ -172,31 +172,31 @@ public function testCreateUser(): void
 
                     <h3><i class="fas fa-lightbulb"></i> 7. Bonnes Pratiques</h3>
 
-                    <h4>✅ À Faire</h4>
+                    <h4>✅ Recommandations</h4>
                     <ol>
-                        <li><strong>Nommer clairement les tests</strong>
+                        <li><strong>Nommage explicite des méthodes de test</strong>
                             <pre class="bg-dark text-light p-2 rounded"><code><?= h('testCreateUserWithValidData()
-testUserWithInvalidEmail()') ?></code></pre>
+testCreateUserWithInvalidEmail()') ?></code></pre>
                         </li>
-                        <li><strong>Un test = Un comportement</strong>
-                            <pre class="bg-dark text-light p-2 rounded"><code><?= h('testEmailValidation()  // Teste SEULEMENT l\'email
-testNameValidation()   // Teste SEULEMENT le nom') ?></code></pre>
+                        <li><strong>Principe d'unicité : un test = un comportement</strong>
+                            <pre class="bg-dark text-light p-2 rounded"><code><?= h('testEmailValidation()  // Valide uniquement l\'email
+testNameValidation()   // Valide uniquement le nom') ?></code></pre>
                         </li>
-                        <li><strong>Utiliser le pattern AAA</strong>
+                        <li><strong>Respect du pattern AAA (Arrange-Act-Assert)</strong>
                             <ul>
-                                <li><strong>Arrange</strong> : Préparer</li>
-                                <li><strong>Act</strong> : Exécuter</li>
-                                <li><strong>Assert</strong> : Vérifier</li>
+                                <li><strong>Arrange</strong> : Préparation des données</li>
+                                <li><strong>Act</strong> : Exécution du code</li>
+                                <li><strong>Assert</strong> : Vérification des résultats</li>
                             </ul>
                         </li>
                     </ol>
 
-                    <h4>❌ À Éviter</h4>
+                    <h4>❌ Anti-Patterns</h4>
                     <ol>
-                        <li>Tests qui dépendent d'autres tests</li>
-                        <li>Accès à la base de données réelle</li>
-                        <li>Trop de mocks</li>
-                        <li>Données bizarres</li>
+                        <li>Tests interdépendants créant des dépendances implicites</li>
+                        <li>Exécution sur base de données de production</li>
+                        <li>Utilisation excessive de mocks nuisant à la lisibilité</li>
+                        <li>Données de test non représentatives ou aléatoires</li>
                     </ol>
 
                     <hr>
@@ -204,14 +204,14 @@ testNameValidation()   // Teste SEULEMENT le nom') ?></code></pre>
                     <h3><i class="fas fa-check-circle"></i> Résumé</h3>
                     <div class="alert alert-success">
                         <ul class="mb-0">
-                            <li>✅ <strong>25 tests</strong> couvrant le code</li>
-                            <li>✅ <strong>Pattern AAA</strong> pour structure claire</li>
-                            <li>✅ <strong>Mocks</strong> pour isoler les dépendances</li>
-                            <li>✅ <strong>100% de réussite</strong> actuel</li>
+                            <li>✅ <strong>25 tests</strong> assurant la couverture du code</li>
+                            <li>✅ <strong>Pattern AAA</strong> pour une structure claire et maintenable</li>
+                            <li>✅ <strong>Mocks</strong> pour isolation des dépendances</li>
+                            <li>✅ <strong>100% de réussite</strong> dans l'état actuel</li>
                         </ul>
                     </div>
 
-                    <p>Pour plus de détails, consultez <code>TESTING.md</code> et <code>TESTS_QUICKSTART.md</code></p>
+                    <p>Pour approfondir, consultez les documents <code>TESTING.md</code> et <code>TESTING_GUIDE.md</code> dans le dossier <code>docs/</code></p>
                 </div>
             </div>
         </div>
