@@ -305,9 +305,6 @@ class ProductsController extends AppController
 
 Les contributions sont les bienvenues ! N'hésitez pas à soumettre une Pull Request.
 
-## 📄 Licence
-
-Ce projet est un logiciel open-source sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## 🎓 Pour Commencer
 
@@ -326,4 +323,3 @@ Ce projet est un logiciel open-source sous licence [MIT](https://opensource.org/
 
 ---
 
-**Bon Développement ! 🚀**
