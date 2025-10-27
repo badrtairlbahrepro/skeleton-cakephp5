@@ -475,5 +475,5 @@ ls logs/
 ---
 
 **Créé:** 2025-10-24  
-**Auteur:** Assistant CakePHP 5  
+**Auteur:** Badr Tairlbahre  
 **Version:** 1.0
